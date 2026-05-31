@@ -1,1546 +1,1485 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>iPhone 16 Pro — Vượt thoát khỏi mọi giới hạn</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apple — Bộ sưu tập 2024</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
   <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --purple: #7c5cff;
       --teal: #7cf0e4;
       --pink: #ff6b9d;
       --amber: #ffba49;
+      --green: #4ade80;
+      --blue: #60a5fa;
       --bg: #07070f;
       --bg2: #0f0f1c;
+      --bg3: #111128;
       --text: #ffffff;
-      --muted: rgba(255, 255, 255, 0.42);
-      --border: rgba(255, 255, 255, 0.08);
+      --muted: rgba(255,255,255,0.42);
+      --border: rgba(255,255,255,0.08);
       --font-display: 'Syne', sans-serif;
       --font-body: 'DM Sans', sans-serif;
     }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); overflow-x: hidden; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    /* ══ SCROLL REVEAL ══ */
+    .reveal { opacity: 0; transform: translateY(48px); transition: opacity 0.75s ease, transform 0.75s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left { opacity: 0; transform: translateX(-48px); transition: opacity 0.75s ease, transform 0.75s ease; }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right { opacity: 0; transform: translateX(48px); transition: opacity 0.75s ease, transform 0.75s ease; }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+    .reveal-scale { opacity: 0; transform: scale(0.88); transition: opacity 0.75s ease, transform 0.75s ease; }
+    .reveal-scale.visible { opacity: 1; transform: scale(1); }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-body);
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    /* ── NAV ── */
+    /* ══ NAV ══ */
     nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 48px;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      background: rgba(7, 7, 15, 0.6);
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 52px;
+      backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+      background: rgba(7,7,15,0.65);
       border-bottom: 0.5px solid var(--border);
+      transition: background 0.3s;
     }
+    .nav-logo { font-family: var(--font-display); font-size: 21px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); text-decoration: none; }
+    .nav-logo span { color: var(--purple); }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 13.5px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-right { display: flex; gap: 12px; align-items: center; }
+    .nav-cta { background: rgba(124,92,255,0.18); color: var(--purple); border: 0.5px solid rgba(124,92,255,0.45); border-radius: 50px; padding: 8px 20px; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s; text-decoration: none; font-family: var(--font-body); }
+    .nav-cta:hover { background: rgba(124,92,255,0.32); transform: translateY(-2px); }
+    .nav-search { background: rgba(255,255,255,0.06); border: 0.5px solid var(--border); border-radius: 50px; padding: 8px 16px; font-size: 13px; color: var(--muted); cursor: pointer; font-family: var(--font-body); }
+    .nav-cart-btn { position: relative; background: rgba(255,255,255,0.06); border: 0.5px solid var(--border); border-radius: 50px; padding: 8px 18px; font-size: 14px; color: var(--text); cursor: pointer; font-family: var(--font-body); transition: all 0.2s; display: flex; align-items: center; gap: 7px; }
+    .nav-cart-btn:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.22); }
+    .cart-badge { background: var(--purple); color: #fff; border-radius: 50%; width: 18px; height: 18px; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; line-height: 1; transition: transform 0.3s; }
+    .cart-badge.bump { animation: cartBump 0.35s ease; }
+    @keyframes cartBump { 0%,100%{transform:scale(1)} 50%{transform:scale(1.5)} }
 
-    .nav-logo {
-      font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      color: var(--text);
-      text-decoration: none;
-    }
-
-    .nav-logo span {
-      color: var(--purple);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 400;
-      transition: color 0.2s;
-      letter-spacing: 0.3px;
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-    }
-
-    .nav-cta {
-      background: rgba(124, 92, 255, 0.15);
-      color: var(--purple);
-      border: 0.5px solid rgba(124, 92, 255, 0.4);
-      border-radius: 50px;
-      padding: 9px 22px;
-      font-size: 13px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s;
-      font-family: var(--font-body);
-      text-decoration: none;
-    }
-
-    .nav-cta:hover {
-      background: rgba(124, 92, 255, 0.3);
-      transform: translateY(-2px);
-    }
-
-    /* ── HERO ── */
+    /* ══ HERO ══ */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 120px 24px 80px;
-      position: relative;
-      overflow: hidden;
-      text-align: center;
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 130px 24px 80px; position: relative; overflow: hidden; text-align: center;
     }
-
-    /* Background orbs */
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      pointer-events: none;
-      opacity: 0.6;
-    }
-
-    .orb1 {
-      width: 500px;
-      height: 500px;
-      background: rgba(100, 60, 255, 0.28);
-      top: -150px;
-      left: -100px;
-      animation: floatSlow 9s ease-in-out infinite;
-    }
-
-    .orb2 {
-      width: 400px;
-      height: 400px;
-      background: rgba(0, 210, 185, 0.2);
-      bottom: -100px;
-      right: -80px;
-      animation: floatSlow 11s ease-in-out infinite 3s;
-    }
-
-    .orb3 {
-      width: 300px;
-      height: 300px;
-      background: rgba(255, 80, 120, 0.15);
-      top: 50%;
-      left: 55%;
-      animation: floatSlow 8s ease-in-out infinite 6s;
-    }
-
-    /* Subtle grid */
+    .orb { position: absolute; border-radius: 50%; filter: blur(90px); pointer-events: none; }
+    .orb1 { width: 560px; height: 560px; background: rgba(100,60,255,0.28); top: -160px; left: -120px; animation: floatSlow 10s ease-in-out infinite; }
+    .orb2 { width: 420px; height: 420px; background: rgba(0,210,185,0.18); bottom: -100px; right: -90px; animation: floatSlow 13s ease-in-out infinite 3s; }
+    .orb3 { width: 300px; height: 300px; background: rgba(255,80,120,0.13); top: 40%; left: 58%; animation: floatSlow 9s ease-in-out infinite 6s; }
     .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-      background-size: 60px 60px;
-      mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
-      pointer-events: none;
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: radial-gradient(ellipse at center, black 15%, transparent 72%);
     }
-
     .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: rgba(124, 92, 255, 0.15);
-      color: #b8aaff;
-      border: 0.5px solid rgba(124, 92, 255, 0.4);
-      border-radius: 50px;
-      font-size: 11px;
-      font-weight: 500;
-      padding: 6px 16px;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-      animation: fadeUp 0.7s ease both;
-      position: relative;
-      z-index: 2;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(124,92,255,0.14); color: #c0b4ff;
+      border: 0.5px solid rgba(124,92,255,0.38); border-radius: 50px;
+      font-size: 11px; font-weight: 500; padding: 6px 16px;
+      letter-spacing: 1.8px; text-transform: uppercase;
+      animation: fadeUp 0.7s ease both; position: relative; z-index: 2;
     }
+    .badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--purple); animation: pulseDot 1.8s ease-in-out infinite; }
+    h1 { font-family: var(--font-display); font-size: clamp(44px, 7.5vw, 92px); font-weight: 800; line-height: 1.04; letter-spacing: -2.5px; margin: 20px 0 12px; animation: fadeUp 0.8s ease 0.1s both; position: relative; z-index: 2; }
+    h1 .grad { background: linear-gradient(135deg, #a899ff 0%, #7cf0e4 55%, #ff6b9d 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-sub { font-size: 17px; font-weight: 300; color: var(--muted); max-width: 500px; line-height: 1.75; margin: 0 auto 40px; animation: fadeUp 0.8s ease 0.2s both; position: relative; z-index: 2; }
 
-    .badge::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--purple);
-      animation: pulseDot 1.8s ease-in-out infinite;
-    }
+    /* ══ PHONE SCENE ══ */
+    .phone-scene { position: relative; width: 260px; height: 320px; margin: 0 auto 44px; animation: antigravity 5.5s ease-in-out infinite; z-index: 5; }
+    .orbit-ring { border-radius: 50%; position: absolute; top: 50%; left: 50%; }
+    .ring1 { width: 210px; height: 210px; margin: -105px 0 0 -105px; border: 0.5px solid rgba(124,92,255,0.2); animation: spin 14s linear infinite; }
+    .ring2 { width: 285px; height: 285px; margin: -142px 0 0 -142px; border: 0.5px dashed rgba(124,240,228,0.13); animation: spin 22s linear infinite reverse; }
+    .orbit-dot { width: 9px; height: 9px; border-radius: 50%; position: absolute; }
+    .d1 { background: var(--purple); top: 14px; right: 30px; animation: floatFast 3.2s ease-in-out infinite; }
+    .d2 { background: var(--teal); bottom: 36px; left: 12px; animation: floatFast 4.1s ease-in-out infinite 1.2s; }
+    .d3 { background: var(--pink); top: 48%; right: 2px; width: 6px; height: 6px; animation: floatFast 3.7s ease-in-out infinite 0.6s; }
+    .d4 { background: var(--amber); top: 28px; left: 26px; width: 7px; height: 7px; animation: floatFast 2.8s ease-in-out infinite 0.3s; }
+    .phone { width: 130px; height: 262px; background: linear-gradient(145deg,#2c2c40,#1a1a28,#111120); border-radius: 32px; border: 1px solid rgba(255,255,255,0.1); position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); box-shadow: 0 0 0 0.5px rgba(255,255,255,0.05), 0 0 40px rgba(124,92,255,0.35), 0 0 80px rgba(124,92,255,0.15); overflow: hidden; }
+    .phone-screen { position: absolute; top: 10px; left: 8px; right: 8px; bottom: 10px; background: linear-gradient(160deg,#12122a,#0a1f40,#0d1830); border-radius: 25px; overflow: hidden; }
+    .phone-notch { width: 44px; height: 11px; background: #07070f; border-radius: 0 0 10px 10px; position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 5; }
+    .icon-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 24px 12px 8px; }
+    .app-icon { height: 26px; border-radius: 8px; opacity: 0.75; }
+    .a1{background:linear-gradient(135deg,#3B82F6,#8B5CF6)}.a2{background:linear-gradient(135deg,#10B981,#3B82F6)}.a3{background:linear-gradient(135deg,#F59E0B,#EF4444)}.a4{background:linear-gradient(135deg,#EC4899,#8B5CF6)}.a5{background:linear-gradient(135deg,#06B6D4,#3B82F6)}.a6{background:linear-gradient(135deg,#84CC16,#10B981)}.a7{background:linear-gradient(135deg,#f97316,#eab308)}.a8{background:linear-gradient(135deg,#a855f7,#ec4899)}.a9{background:linear-gradient(135deg,#14b8a6,#06b6d4)}
+    .screen-time { padding: 8px 12px; border-top: 0.5px solid rgba(255,255,255,0.08); }
+    .time-txt { font-size: 9px; color: rgba(255,255,255,0.3); letter-spacing: 0.5px; }
+    .time-big { font-family: var(--font-display); font-size: 20px; color: rgba(255,255,255,0.9); font-weight: 700; letter-spacing: -0.5px; }
+    .side-btn { width: 3px; background: rgba(255,255,255,0.07); border-radius: 2px; position: absolute; }
+    .sb-r{right:-4px;top:68px;height:36px}.sb-l1{left:-4px;top:56px;height:24px}.sb-l2{left:-4px;top:86px;height:24px}
 
-    h1 {
-      font-family: var(--font-display);
-      font-size: clamp(42px, 7vw, 86px);
-      font-weight: 800;
-      line-height: 1.05;
-      letter-spacing: -2px;
-      margin: 20px 0 10px;
-      animation: fadeUp 0.8s ease 0.1s both;
-      position: relative;
-      z-index: 2;
-    }
+    /* ══ CTA ROW ══ */
+    .cta-row { display: flex; gap: 14px; justify-content: center; animation: fadeUp 0.9s ease 0.35s both; position: relative; z-index: 2; flex-wrap: wrap; }
+    .btn-buy { position: relative; overflow: hidden; background: linear-gradient(135deg,#7c5cff,#4c9eff); color: #fff; border: none; border-radius: 50px; padding: 15px 36px; font-size: 15px; font-weight: 500; cursor: pointer; transition: transform 0.22s, box-shadow 0.22s; font-family: var(--font-body); }
+    .btn-buy::after { content: ''; position: absolute; top: 0; left: -100%; height: 100%; width: 50%; background: linear-gradient(90deg,transparent,rgba(255,255,255,0.22),transparent); animation: shimmer 2.8s ease-in-out infinite; }
+    .btn-buy:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(124,92,255,0.45); }
+    .btn-learn { background: transparent; color: var(--muted); border: 0.5px solid rgba(255,255,255,0.18); border-radius: 50px; padding: 15px 30px; font-size: 15px; font-weight: 400; cursor: pointer; transition: all 0.22s; font-family: var(--font-body); }
+    .btn-learn:hover { border-color: rgba(255,255,255,0.45); color: var(--text); transform: translateY(-4px); }
 
-    h1 .grad {
-      background: linear-gradient(135deg, #a899ff 0%, #7cf0e4 60%, #ff6b9d 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+    /* ══ HERO FEATURES ══ */
+    .hero-features { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; max-width: 860px; margin: 52px auto 0; animation: fadeUp 1s ease 0.5s both; position: relative; z-index: 2; }
+    .feat { background: rgba(255,255,255,0.034); border: 0.5px solid var(--border); border-radius: 18px; padding: 20px 18px; text-align: center; transition: transform 0.25s, background 0.25s, border-color 0.25s; cursor: default; }
+    .feat:hover { transform: translateY(-8px); background: rgba(255,255,255,0.065); border-color: rgba(255,255,255,0.14); }
+    .feat-icon { font-size: 26px; margin-bottom: 10px; display: block; }
+    .feat-title { font-family: var(--font-display); font-size: 13.5px; font-weight: 600; color: rgba(255,255,255,0.9); margin-bottom: 5px; }
+    .feat-desc { font-size: 11.5px; color: var(--muted); line-height: 1.5; }
 
-    .sub {
-      font-size: 17px;
-      font-weight: 300;
-      color: var(--muted);
-      max-width: 480px;
-      line-height: 1.7;
-      margin: 0 auto 40px;
-      animation: fadeUp 0.8s ease 0.2s both;
-      position: relative;
-      z-index: 2;
-    }
+    /* ══ SECTION COMMONS ══ */
+    .section-wrap { max-width: 1000px; margin: 0 auto; padding: 120px 32px 0; }
+    .section-label { font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--purple); font-weight: 500; margin-bottom: 14px; opacity: 0.85; }
+    .section-title { font-family: var(--font-display); font-size: clamp(28px,4vw,50px); font-weight: 700; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 56px; }
+    .section-title .c-teal { color: var(--teal); }
+    .section-title .c-pink { color: var(--pink); }
+    .section-title .c-amber { color: var(--amber); }
+    .section-title .c-purple { color: var(--purple); }
+    .section-title .c-green { color: var(--green); }
+    .section-title .c-blue { color: var(--blue); }
 
-    /* ── PHONE SCENE ── */
-    .phone-scene {
-      position: relative;
-      width: 260px;
-      height: 320px;
-      margin: 0 auto 40px;
-      animation: antigravity 5.5s ease-in-out infinite;
-      z-index: 5;
-    }
-
-    .orbit-ring {
-      border-radius: 50%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-    }
-
-    .ring1 {
-      width: 210px;
-      height: 210px;
-      margin: -105px 0 0 -105px;
-      border: 0.5px solid rgba(124, 92, 255, 0.2);
-      animation: spin 14s linear infinite;
-    }
-
-    .ring2 {
-      width: 280px;
-      height: 280px;
-      margin: -140px 0 0 -140px;
-      border: 0.5px dashed rgba(124, 240, 228, 0.15);
-      animation: spin 22s linear infinite reverse;
-    }
-
-    .orbit-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      position: absolute;
-    }
-
-    .d1 {
-      background: var(--purple);
-      top: 14px;
-      right: 32px;
-      animation: floatFast 3.2s ease-in-out infinite;
-    }
-
-    .d2 {
-      background: var(--teal);
-      bottom: 40px;
-      left: 14px;
-      animation: floatFast 4.1s ease-in-out infinite 1.2s;
-    }
-
-    .d3 {
-      background: var(--pink);
-      top: 48%;
-      right: 4px;
-      width: 6px;
-      height: 6px;
-      animation: floatFast 3.7s ease-in-out infinite 0.6s;
-    }
-
-    .d4 {
-      background: var(--amber);
-      top: 30px;
-      left: 28px;
-      width: 7px;
-      height: 7px;
-      animation: floatFast 2.8s ease-in-out infinite 0.3s;
-    }
-
-    .phone {
-      width: 130px;
-      height: 260px;
-      background: linear-gradient(145deg, #2c2c40, #1a1a28, #111120);
-      border-radius: 32px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      box-shadow:
-        0 0 0 0.5px rgba(255, 255, 255, 0.05),
-        0 0 40px rgba(124, 92, 255, 0.35),
-        0 0 80px rgba(124, 92, 255, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      overflow: hidden;
-    }
-
-    .phone-screen {
-      position: absolute;
-      top: 10px;
-      left: 8px;
-      right: 8px;
-      bottom: 10px;
-      background: linear-gradient(160deg, #12122a, #0a1f40, #0d1830);
-      border-radius: 25px;
-      overflow: hidden;
-    }
-
-    .phone-notch {
-      width: 44px;
-      height: 11px;
-      background: #07070f;
-      border-radius: 0 0 10px 10px;
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 5;
-    }
-
-    .icon-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      padding: 24px 12px 10px;
-    }
-
-    .app-icon {
-      height: 26px;
-      border-radius: 8px;
-      opacity: 0.75;
-    }
-
-    .a1 {
-      background: linear-gradient(135deg, #3B82F6, #8B5CF6);
-    }
-
-    .a2 {
-      background: linear-gradient(135deg, #10B981, #3B82F6);
-    }
-
-    .a3 {
-      background: linear-gradient(135deg, #F59E0B, #EF4444);
-    }
-
-    .a4 {
-      background: linear-gradient(135deg, #EC4899, #8B5CF6);
-    }
-
-    .a5 {
-      background: linear-gradient(135deg, #06B6D4, #3B82F6);
-    }
-
-    .a6 {
-      background: linear-gradient(135deg, #84CC16, #10B981);
-    }
-
-    .a7 {
-      background: linear-gradient(135deg, #f97316, #eab308);
-    }
-
-    .a8 {
-      background: linear-gradient(135deg, #a855f7, #ec4899);
-    }
-
-    .a9 {
-      background: linear-gradient(135deg, #14b8a6, #06b6d4);
-    }
-
-    .screen-time {
-      padding: 8px 12px;
-      border-top: 0.5px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .time-txt {
-      font-size: 9px;
-      color: rgba(255, 255, 255, 0.3);
-      font-family: var(--font-body);
-      letter-spacing: 0.5px;
-    }
-
-    .time-big {
-      font-family: var(--font-display);
-      font-size: 20px;
-      color: rgba(255, 255, 255, 0.9);
-      font-weight: 700;
-      letter-spacing: -0.5px;
-    }
-
-    .side-btn {
-      width: 3px;
-      background: rgba(255, 255, 255, 0.07);
-      border-radius: 2px;
-      position: absolute;
-    }
-
-    .sb-r {
-      right: -4px;
-      top: 68px;
-      height: 36px;
-    }
-
-    .sb-l1 {
-      left: -4px;
-      top: 56px;
-      height: 24px;
-    }
-
-    .sb-l2 {
-      left: -4px;
-      top: 86px;
-      height: 24px;
-    }
-
-    /* ── CTA ── */
-    .cta-row {
-      display: flex;
-      gap: 14px;
-      justify-content: center;
-      animation: fadeUp 0.9s ease 0.35s both;
-      position: relative;
-      z-index: 2;
-    }
-
-    .btn-buy {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, #7c5cff, #4c9eff);
-      color: #fff;
-      border: none;
-      border-radius: 50px;
-      padding: 15px 36px;
-      font-size: 15px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: transform 0.22s, box-shadow 0.22s;
-      font-family: var(--font-body);
-      letter-spacing: 0.2px;
-    }
-
-    .btn-buy::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      height: 100%;
-      width: 50%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
-      animation: shimmer 2.8s ease-in-out infinite;
-    }
-
-    .btn-buy:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(124, 92, 255, 0.45);
-    }
-
-    .btn-learn {
-      background: transparent;
-      color: var(--muted);
-      border: 0.5px solid rgba(255, 255, 255, 0.18);
-      border-radius: 50px;
-      padding: 15px 30px;
-      font-size: 15px;
-      font-weight: 400;
-      cursor: pointer;
-      transition: all 0.22s;
-      font-family: var(--font-body);
-      letter-spacing: 0.2px;
-    }
-
-    .btn-learn:hover {
-      border-color: rgba(255, 255, 255, 0.45);
-      color: var(--text);
-      transform: translateY(-4px);
-    }
-
-    /* ── FEATURES STRIP ── */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      max-width: 840px;
-      margin: 52px auto 0;
-      animation: fadeUp 1s ease 0.5s both;
-      position: relative;
-      z-index: 2;
-    }
-
-    .feat {
-      background: rgba(255, 255, 255, 0.035);
+    /* ══ REAL IMAGE HERO CARDS ══ */
+    .product-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 0; }
+    .p-hero-card {
+      border-radius: 24px; overflow: hidden; position: relative; cursor: pointer;
       border: 0.5px solid var(--border);
-      border-radius: 18px;
-      padding: 20px 18px;
-      text-align: center;
-      transition: transform 0.25s, background 0.25s, border-color 0.25s;
-      cursor: default;
+      transition: transform 0.3s, box-shadow 0.3s;
+      min-height: 360px;
+    }
+    .p-hero-card:hover { transform: translateY(-8px); box-shadow: 0 24px 60px rgba(0,0,0,0.5); }
+    .p-hero-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+    .p-hero-card:hover img { transform: scale(1.04); }
+    .p-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(5,5,15,0.9) 0%, rgba(5,5,15,0.3) 50%, transparent 100%);
+      display: flex; flex-direction: column; justify-content: flex-end; padding: 28px;
+    }
+    .p-hero-tag { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--purple); font-weight: 600; margin-bottom: 8px; background: rgba(124,92,255,0.18); display: inline-block; padding: 4px 10px; border-radius: 20px; border: 0.5px solid rgba(124,92,255,0.35); width: fit-content; }
+    .p-hero-name { font-family: var(--font-display); font-size: 28px; font-weight: 700; letter-spacing: -1px; margin-bottom: 6px; }
+    .p-hero-desc { font-size: 13px; color: var(--muted); margin-bottom: 16px; line-height: 1.5; }
+    .p-hero-btn { display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.1); border: 0.5px solid rgba(255,255,255,0.2); border-radius: 50px; padding: 8px 18px; font-size: 13px; color: var(--text); cursor: pointer; font-family: var(--font-body); transition: background 0.2s; width: fit-content; }
+    .p-hero-btn:hover { background: rgba(255,255,255,0.18); }
+    .p-hero-price { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--teal); margin-bottom: 10px; }
+
+    /* ══ CAMERA SHOWCASE ══ */
+    .camera-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .cam-main { border-radius: 22px; overflow: hidden; position: relative; grid-row: 1/3; min-height: 480px; }
+    .cam-main img { width: 100%; height: 100%; object-fit: cover; }
+    .cam-main-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,5,15,0.88) 0%, transparent 55%); padding: 28px; display: flex; flex-direction: column; justify-content: flex-end; }
+    .cam-shot { border-radius: 18px; overflow: hidden; position: relative; min-height: 220px; }
+    .cam-shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .cam-shot-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 14px 18px; background: linear-gradient(to top, rgba(5,5,15,0.85) 0%, transparent 100%); }
+    .cam-label { font-size: 11px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
+    .cam-val { font-family: var(--font-display); font-size: 18px; font-weight: 700; letter-spacing: -0.5px; }
+    .cam-specs { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+    .cam-spec-pill { background: rgba(255,255,255,0.07); border: 0.5px solid var(--border); border-radius: 50px; padding: 7px 16px; font-size: 12px; color: var(--muted); }
+
+    /* ══ SPECS ══ */
+    .specs-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border-radius: 22px; overflow: hidden; }
+    .spec-card { background: var(--bg2); padding: 36px 30px; transition: background 0.2s; }
+    .spec-card:hover { background: #131327; }
+    .spec-num { font-family: var(--font-display); font-size: 48px; font-weight: 800; letter-spacing: -2px; line-height: 1; margin-bottom: 6px; }
+    .spec-unit { font-size: 22px; font-weight: 500; }
+    .spec-label { font-size: 13px; color: var(--muted); line-height: 1.5; margin-top: 8px; }
+    .c-purple{color:var(--purple)}.c-teal{color:var(--teal)}.c-pink{color:var(--pink)}.c-amber{color:var(--amber)}.c-green{color:var(--green)}.c-blue{color:var(--blue)}
+
+    /* ══ PRICING ══ */
+    .pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .price-card {
+      background: var(--bg2); border: 0.5px solid var(--border); border-radius: 22px;
+      padding: 32px 28px; position: relative; overflow: hidden;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+    }
+    .price-card:hover { transform: translateY(-8px); border-color: rgba(124,92,255,0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+    .price-card.featured { border-color: rgba(124,92,255,0.5); background: linear-gradient(145deg, #131328, #0f0f22); }
+    .price-card.featured::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(124,92,255,0.14), transparent 65%); pointer-events: none; }
+    .price-badge { position: absolute; top: 18px; right: 18px; background: var(--purple); color: #fff; font-size: 10px; font-weight: 600; padding: 4px 10px; border-radius: 50px; letter-spacing: 0.5px; }
+    .price-model { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    .price-name { font-family: var(--font-display); font-size: 24px; font-weight: 700; letter-spacing: -0.8px; margin-bottom: 6px; }
+    .price-desc { font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 24px; }
+    .price-amount { font-family: var(--font-display); font-size: 42px; font-weight: 800; letter-spacing: -2px; line-height: 1; margin-bottom: 4px; }
+    .price-amount span { font-size: 18px; font-weight: 500; vertical-align: super; }
+    .price-note { font-size: 12px; color: var(--muted); margin-bottom: 28px; }
+    .price-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+    .price-features li { font-size: 13.5px; color: rgba(255,255,255,0.75); display: flex; align-items: flex-start; gap: 8px; line-height: 1.45; }
+    .price-features li::before { content: '✓'; color: var(--teal); font-weight: 700; font-size: 13px; flex-shrink: 0; margin-top: 1px; }
+    .price-btn { width: 100%; padding: 13px; border-radius: 50px; font-size: 14px; font-weight: 500; font-family: var(--font-body); cursor: pointer; transition: all 0.22s; }
+    .price-btn.primary { background: linear-gradient(135deg,#7c5cff,#4c9eff); color: #fff; border: none; }
+    .price-btn.primary:hover { opacity: 0.88; transform: translateY(-2px); }
+    .price-btn.outline { background: transparent; color: var(--muted); border: 0.5px solid var(--border); }
+    .price-btn.outline:hover { border-color: rgba(255,255,255,0.35); color: var(--text); transform: translateY(-2px); }
+
+    /* ══ PRODUCT LINEUP ══ */
+    .lineup-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .lineup-card {
+      border-radius: 22px; overflow: hidden; position: relative; cursor: pointer;
+      border: 0.5px solid var(--border); transition: transform 0.3s, box-shadow 0.3s; min-height: 320px;
+    }
+    .lineup-card:hover { transform: translateY(-10px) scale(1.01); box-shadow: 0 28px 64px rgba(0,0,0,0.55); }
+    .lineup-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+    .lineup-card:hover img { transform: scale(1.06); }
+    .lineup-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,5,15,0.92) 0%, rgba(5,5,15,0.25) 55%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; }
+    .lineup-tag { font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 7px; width: fit-content; padding: 3px 10px; border-radius: 20px; border: 0.5px solid; }
+    .lineup-name { font-family: var(--font-display); font-size: 22px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 4px; }
+    .lineup-price { font-size: 13px; font-weight: 500; margin-bottom: 14px; }
+    .lineup-btn { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.1); border: 0.5px solid rgba(255,255,255,0.2); border-radius: 50px; padding: 7px 16px; font-size: 12px; color: var(--text); cursor: pointer; font-family: var(--font-body); transition: background 0.2s; width: fit-content; }
+    .lineup-btn:hover { background: rgba(255,255,255,0.2); }
+
+    /* ══ COLORS ══ */
+    .color-section { max-width: 1000px; margin: 0 auto; padding: 120px 32px 0; text-align: center; }
+    .colors-row { display: flex; gap: 20px; justify-content: center; margin-top: 44px; flex-wrap: wrap; }
+    .color-opt { display: flex; flex-direction: column; align-items: center; gap: 10px; cursor: pointer; transition: transform 0.2s; }
+    .color-opt:hover { transform: translateY(-6px); }
+    .color-swatch { width: 54px; height: 54px; border-radius: 50%; border: 2px solid transparent; transition: border-color 0.2s, box-shadow 0.2s; }
+    .color-opt.active .color-swatch { border-color: rgba(255,255,255,0.5); box-shadow: 0 0 0 4px rgba(255,255,255,0.1); }
+    .color-name { font-size: 11px; color: var(--muted); }
+    .sw1{background:radial-gradient(circle at 30% 30%,#e8dcc8,#b8a68a)}.sw2{background:radial-gradient(circle at 30% 30%,#c0b8b0,#8c8480)}.sw3{background:radial-gradient(circle at 30% 30%,#1a1a1a,#3a3a3a)}.sw4{background:radial-gradient(circle at 30% 30%,#d4e8f0,#a0c4d8)}
+
+    /* ══ FOOTER ══ */
+    footer { border-top: 0.5px solid var(--border); margin-top: 120px; padding: 48px 52px; }
+    .footer-top { display: flex; justify-content: space-between; gap: 40px; margin-bottom: 48px; flex-wrap: wrap; }
+    .footer-brand { font-family: var(--font-display); font-size: 22px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 12px; }
+    .footer-brand span { color: var(--purple); }
+    .footer-tagline { font-size: 13px; color: var(--muted); max-width: 240px; line-height: 1.6; }
+    .footer-col h4 { font-family: var(--font-display); font-size: 13px; font-weight: 600; margin-bottom: 16px; color: rgba(255,255,255,0.7); letter-spacing: 0.5px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-col ul a:hover { color: var(--text); }
+    .footer-bottom { border-top: 0.5px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--muted); flex-wrap: wrap; gap: 12px; }
+
+    /* ══ ANIMATIONS ══ */
+    @keyframes antigravity { 0%,100%{transform:translateY(0) rotate(-1.5deg)} 25%{transform:translateY(-18px) rotate(1deg)} 50%{transform:translateY(-30px) rotate(2deg)} 75%{transform:translateY(-16px) rotate(-0.5deg)} }
+    @keyframes floatSlow { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-20px)} }
+    @keyframes floatFast { 0%,100%{transform:translateY(0) rotate(8deg)} 50%{transform:translateY(-22px) rotate(-6deg)} }
+    @keyframes spin { from{transform:translate(-50%,-50%) rotate(0deg)} to{transform:translate(-50%,-50%) rotate(360deg)} }
+    @keyframes shimmer { 0%{left:-100%} 100%{left:200%} }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes pulseDot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.7)} }
+
+    @media(max-width:768px){
+      nav{padding:14px 20px}.nav-links{display:none}
+      .hero-features{grid-template-columns:repeat(2,1fr)}
+      .product-hero-grid{grid-template-columns:1fr}
+      .camera-grid{grid-template-columns:1fr}.cam-main{grid-row:auto;min-height:280px}
+      .specs-grid{grid-template-columns:1fr}
+      .pricing-grid{grid-template-columns:1fr}
+      .lineup-grid{grid-template-columns:1fr}
+      footer{padding:32px 20px}
+      .footer-top{flex-direction:column}
+      .cart-drawer { width: 100% !important; }
+      .checkout-modal-inner { padding: 24px 18px !important; max-width: 100% !important; margin: 0 10px !important; }
     }
 
-    .feat:hover {
-      transform: translateY(-8px);
-      background: rgba(255, 255, 255, 0.065);
-      border-color: rgba(255, 255, 255, 0.14);
+    /* ══════════════════════════════
+       CART DRAWER
+    ══════════════════════════════ */
+    .cart-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(6px); z-index: 900;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.35s ease;
     }
+    .cart-overlay.open { opacity: 1; pointer-events: all; }
 
-    .feat-icon {
-      font-size: 26px;
-      margin-bottom: 10px;
-      display: block;
+    .cart-drawer {
+      position: fixed; top: 0; right: 0; bottom: 0;
+      width: 420px; background: #0c0c1e;
+      border-left: 0.5px solid var(--border);
+      z-index: 901; display: flex; flex-direction: column;
+      transform: translateX(110%);
+      transition: transform 0.4s cubic-bezier(0.32,0,0.14,1);
+      box-shadow: -20px 0 60px rgba(0,0,0,0.6);
     }
+    .cart-drawer.open { transform: translateX(0); }
 
-    .feat-title {
-      font-family: var(--font-display);
-      font-size: 14px;
-      font-weight: 600;
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 5px;
+    .cart-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 24px; border-bottom: 0.5px solid var(--border);
+      flex-shrink: 0;
     }
+    .cart-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+    .cart-title span { color: var(--muted); font-size: 14px; font-weight: 400; margin-left: 8px; }
+    .cart-close { background: rgba(255,255,255,0.07); border: none; color: var(--text); border-radius: 50%; width: 34px; height: 34px; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+    .cart-close:hover { background: rgba(255,255,255,0.14); }
 
-    .feat-desc {
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.5;
+    .cart-body { flex: 1; overflow-y: auto; padding: 16px 24px; }
+    .cart-body::-webkit-scrollbar { width: 4px; }
+    .cart-body::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 2px; }
+
+    .cart-empty { text-align: center; padding: 60px 20px; color: var(--muted); }
+    .cart-empty-icon { font-size: 52px; margin-bottom: 14px; opacity: 0.5; }
+    .cart-empty p { font-size: 15px; }
+
+    .cart-item {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 16px 0; border-bottom: 0.5px solid var(--border);
+      animation: fadeUp 0.3s ease both;
     }
-
-    /* ── SPECS SECTION ── */
-    .specs-section {
-      max-width: 900px;
-      margin: 120px auto 0;
-      padding: 0 24px;
+    .cart-item-img {
+      width: 72px; height: 72px; border-radius: 14px;
+      object-fit: cover; flex-shrink: 0;
+      border: 0.5px solid var(--border);
     }
+    .cart-item-info { flex: 1; min-width: 0; }
+    .cart-item-name { font-family: var(--font-display); font-size: 14px; font-weight: 600; margin-bottom: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .cart-item-variant { font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+    .cart-item-row { display: flex; align-items: center; justify-content: space-between; }
+    .cart-qty { display: flex; align-items: center; gap: 0; background: rgba(255,255,255,0.06); border: 0.5px solid var(--border); border-radius: 50px; overflow: hidden; }
+    .qty-btn { background: none; border: none; color: var(--text); width: 30px; height: 28px; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.15s; }
+    .qty-btn:hover { background: rgba(255,255,255,0.1); }
+    .qty-num { font-size: 13px; font-weight: 500; min-width: 24px; text-align: center; }
+    .cart-item-price { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--teal); }
+    .cart-remove { background: none; border: none; color: rgba(255,255,255,0.25); font-size: 18px; cursor: pointer; padding: 2px 0 0 8px; transition: color 0.2s; line-height: 1; }
+    .cart-remove:hover { color: var(--pink); }
 
-    .section-label {
-      font-size: 11px;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--purple);
-      font-weight: 500;
-      margin-bottom: 14px;
-      opacity: 0.85;
+    .cart-footer { padding: 20px 24px; border-top: 0.5px solid var(--border); flex-shrink: 0; background: #0a0a1a; }
+    .cart-promo { display: flex; gap: 8px; margin-bottom: 18px; }
+    .cart-promo input {
+      flex: 1; background: rgba(255,255,255,0.05); border: 0.5px solid var(--border);
+      border-radius: 50px; padding: 10px 16px; color: var(--text); font-size: 13px;
+      font-family: var(--font-body); outline: none; transition: border-color 0.2s;
     }
-
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(28px, 4vw, 46px);
-      font-weight: 700;
-      letter-spacing: -1.5px;
-      line-height: 1.1;
-      margin-bottom: 60px;
+    .cart-promo input:focus { border-color: rgba(124,92,255,0.5); }
+    .cart-promo input::placeholder { color: var(--muted); }
+    .cart-promo-btn { background: rgba(124,92,255,0.2); border: 0.5px solid rgba(124,92,255,0.4); color: var(--purple); border-radius: 50px; padding: 10px 18px; font-size: 13px; font-weight: 500; cursor: pointer; font-family: var(--font-body); transition: all 0.2s; white-space: nowrap; }
+    .cart-promo-btn:hover { background: rgba(124,92,255,0.35); }
+    .promo-success { font-size: 12px; color: var(--green); margin: -10px 0 12px; display: none; }
+    .cart-summary { margin-bottom: 16px; }
+    .cart-summary-row { display: flex; justify-content: space-between; font-size: 13.5px; color: var(--muted); margin-bottom: 8px; }
+    .cart-summary-row.total { color: var(--text); font-family: var(--font-display); font-size: 17px; font-weight: 700; letter-spacing: -0.3px; border-top: 0.5px solid var(--border); padding-top: 12px; margin-top: 4px; }
+    .cart-summary-row.total span:last-child { color: var(--teal); }
+    .cart-checkout-btn {
+      width: 100%; padding: 15px; border: none; border-radius: 50px;
+      background: linear-gradient(135deg,#7c5cff,#4c9eff);
+      color: #fff; font-size: 15px; font-weight: 600;
+      font-family: var(--font-display); cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+      position: relative; overflow: hidden;
     }
+    .cart-checkout-btn::after { content:''; position:absolute; top:0; left:-100%; height:100%; width:50%; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent); animation:shimmer 2.5s ease-in-out infinite; }
+    .cart-checkout-btn:hover { opacity: 0.88; transform: translateY(-2px); }
+    .cart-checkout-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+    .cart-secure { text-align: center; font-size: 11.5px; color: var(--muted); margin-top: 10px; }
 
-    .section-title span {
-      color: var(--teal);
+    /* ══════════════════════════════
+       CHECKOUT MODAL (3 STEPS)
+    ══════════════════════════════ */
+    .checkout-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(10px); z-index: 1000;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s ease;
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px;
     }
+    .checkout-overlay.open { opacity: 1; pointer-events: all; }
 
-    .specs-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border-radius: 20px;
-      overflow: hidden;
-    }
-
-    .spec-card {
-      background: var(--bg2);
-      padding: 36px 32px;
-      transition: background 0.2s;
-    }
-
-    .spec-card:hover {
-      background: #131327;
-    }
-
-    .spec-num {
-      font-family: var(--font-display);
-      font-size: 48px;
-      font-weight: 800;
-      letter-spacing: -2px;
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-
-    .spec-unit {
-      font-size: 22px;
-      font-weight: 500;
-    }
-
-    .spec-label {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.5;
-      margin-top: 8px;
-    }
-
-    .c-purple {
-      color: var(--purple);
-    }
-
-    .c-teal {
-      color: var(--teal);
-    }
-
-    .c-pink {
-      color: var(--pink);
-    }
-
-    .c-amber {
-      color: var(--amber);
-    }
-
-    /* ── COLOR PICKER ── */
-    .color-section {
-      max-width: 900px;
-      margin: 120px auto 0;
-      padding: 0 24px;
-      text-align: center;
-    }
-
-    .colors-row {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      margin-top: 40px;
-      flex-wrap: wrap;
-    }
-
-    .color-opt {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-
-    .color-opt:hover {
-      transform: translateY(-6px);
-    }
-
-    .color-swatch {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      border: 2px solid transparent;
-      transition: border-color 0.2s, box-shadow 0.2s;
+    .checkout-modal-inner {
+      background: #0d0d1f; border: 0.5px solid rgba(255,255,255,0.1);
+      border-radius: 28px; width: 100%; max-width: 560px;
+      max-height: 90vh; overflow-y: auto;
+      transform: scale(0.92) translateY(20px);
+      transition: transform 0.35s cubic-bezier(0.32,0,0.14,1);
+      padding: 36px 40px;
       position: relative;
     }
+    .checkout-overlay.open .checkout-modal-inner { transform: scale(1) translateY(0); }
+    .checkout-modal-inner::-webkit-scrollbar { width: 4px; }
+    .checkout-modal-inner::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
 
-    .color-opt.active .color-swatch {
-      border-color: rgba(255, 255, 255, 0.5);
-      box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.08);
+    /* Progress steps */
+    .checkout-steps { display: flex; align-items: center; justify-content: center; gap: 0; margin-bottom: 36px; }
+    .step-item { display: flex; align-items: center; gap: 10px; }
+    .step-dot {
+      width: 32px; height: 32px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700; font-family: var(--font-display);
+      border: 1.5px solid var(--border); color: var(--muted);
+      transition: all 0.3s;
     }
+    .step-dot.active { background: var(--purple); border-color: var(--purple); color: #fff; box-shadow: 0 0 0 4px rgba(124,92,255,0.2); }
+    .step-dot.done { background: var(--teal); border-color: var(--teal); color: #0a0a14; }
+    .step-label { font-size: 12px; color: var(--muted); font-weight: 500; transition: color 0.3s; }
+    .step-label.active { color: var(--text); }
+    .step-line { width: 40px; height: 1px; background: var(--border); margin: 0 8px; transition: background 0.3s; }
+    .step-line.done { background: var(--teal); }
 
-    .color-name {
-      font-size: 11px;
-      color: var(--muted);
-      letter-spacing: 0.3px;
+    .checkout-step { display: none; }
+    .checkout-step.active { display: block; animation: fadeUp 0.3s ease both; }
+
+    .checkout-h { font-family: var(--font-display); font-size: 22px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 6px; }
+    .checkout-sub { font-size: 13px; color: var(--muted); margin-bottom: 28px; line-height: 1.5; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+    .form-row.single { grid-template-columns: 1fr; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label { font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.65); letter-spacing: 0.3px; }
+    .form-group input, .form-group select {
+      background: rgba(255,255,255,0.05); border: 0.5px solid var(--border);
+      border-radius: 12px; padding: 12px 16px; color: var(--text);
+      font-size: 14px; font-family: var(--font-body); outline: none;
+      transition: border-color 0.2s, background 0.2s;
     }
+    .form-group input:focus, .form-group select:focus { border-color: rgba(124,92,255,0.55); background: rgba(124,92,255,0.06); }
+    .form-group input::placeholder { color: rgba(255,255,255,0.22); }
+    .form-group select { cursor: pointer; appearance: none; }
+    .form-group select option { background: #1a1a2e; }
+    .form-invalid { border-color: var(--pink) !important; }
+    .form-error { font-size: 11px; color: var(--pink); margin-top: 2px; display: none; }
+    .form-error.show { display: block; }
 
-    .sw1 {
-      background: radial-gradient(circle at 30% 30%, #e8dcc8, #b8a68a);
+    /* Payment icons */
+    .payment-methods { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+    .pay-opt {
+      flex: 1; min-width: 100px;
+      border: 1.5px solid var(--border); border-radius: 14px; padding: 14px 12px;
+      text-align: center; cursor: pointer; transition: all 0.2s;
+      background: rgba(255,255,255,0.03);
     }
+    .pay-opt:hover { border-color: rgba(124,92,255,0.4); background: rgba(124,92,255,0.06); }
+    .pay-opt.selected { border-color: var(--purple); background: rgba(124,92,255,0.12); }
+    .pay-icon { font-size: 22px; margin-bottom: 5px; }
+    .pay-name { font-size: 11.5px; color: var(--muted); font-weight: 500; }
+    .pay-opt.selected .pay-name { color: var(--purple); }
 
-    .sw2 {
-      background: radial-gradient(circle at 30% 30%, #c0b8b0, #8c8480);
+    .card-fields { animation: fadeUp 0.25s ease; }
+    .card-num-wrap { position: relative; }
+    .card-num-wrap .card-type { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); font-size: 18px; }
+
+    /* Order summary in checkout */
+    .checkout-order-items { margin-bottom: 18px; }
+    .co-item { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 0.5px solid var(--border); }
+    .co-item-img { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; border: 0.5px solid var(--border); }
+    .co-item-name { font-family: var(--font-display); font-size: 13.5px; font-weight: 600; flex: 1; }
+    .co-item-qty { font-size: 12px; color: var(--muted); }
+    .co-item-price { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--teal); }
+    .co-summary { background: rgba(255,255,255,0.03); border: 0.5px solid var(--border); border-radius: 16px; padding: 18px 20px; margin-bottom: 20px; }
+    .co-row { display: flex; justify-content: space-between; font-size: 13.5px; color: var(--muted); margin-bottom: 9px; }
+    .co-row:last-child { margin-bottom: 0; }
+    .co-row.total { color: var(--text); font-family: var(--font-display); font-size: 17px; font-weight: 700; border-top: 0.5px solid var(--border); padding-top: 12px; margin-top: 4px; }
+    .co-row.total span:last-child { color: var(--teal); }
+
+    .checkout-btn-row { display: flex; gap: 10px; margin-top: 24px; }
+    .co-back { flex-shrink: 0; background: rgba(255,255,255,0.06); border: 0.5px solid var(--border); border-radius: 50px; padding: 14px 20px; color: var(--muted); font-size: 14px; cursor: pointer; font-family: var(--font-body); transition: all 0.2s; }
+    .co-back:hover { border-color: rgba(255,255,255,0.25); color: var(--text); }
+    .co-next {
+      flex: 1; background: linear-gradient(135deg,#7c5cff,#4c9eff); border: none;
+      border-radius: 50px; padding: 14px; color: #fff; font-size: 15px;
+      font-weight: 600; font-family: var(--font-display); cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s; position: relative; overflow: hidden;
     }
+    .co-next::after { content:''; position:absolute; top:0; left:-100%; height:100%; width:50%; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent); animation:shimmer 2.5s ease-in-out infinite; }
+    .co-next:hover { opacity: 0.88; transform: translateY(-2px); }
 
-    .sw3 {
-      background: radial-gradient(circle at 30% 30%, #1a1a1a, #3a3a3a);
+    /* Success screen */
+    .success-screen { text-align: center; padding: 20px 0 10px; }
+    .success-anim { width: 88px; height: 88px; border-radius: 50%; background: linear-gradient(135deg,var(--teal),var(--purple)); margin: 0 auto 24px; display: flex; align-items: center; justify-content: center; font-size: 38px; animation: successPop 0.5s cubic-bezier(0.18,0.89,0.32,1.28) both; }
+    @keyframes successPop { from{transform:scale(0);opacity:0} to{transform:scale(1);opacity:1} }
+    .success-title { font-family: var(--font-display); font-size: 26px; font-weight: 800; letter-spacing: -0.8px; margin-bottom: 10px; }
+    .success-sub { font-size: 14px; color: var(--muted); line-height: 1.65; margin-bottom: 28px; max-width: 360px; margin-left: auto; margin-right: auto; }
+    .order-code { background: rgba(124,92,255,0.12); border: 0.5px solid rgba(124,92,255,0.3); border-radius: 12px; padding: 14px 20px; display: inline-block; margin-bottom: 28px; }
+    .order-code-label { font-size: 11px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+    .order-code-val { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--purple); letter-spacing: 2px; }
+    .success-steps { display: flex; gap: 12px; justify-content: center; margin-bottom: 28px; flex-wrap: wrap; }
+    .success-step { background: rgba(255,255,255,0.04); border: 0.5px solid var(--border); border-radius: 14px; padding: 14px 18px; text-align: center; min-width: 110px; }
+    .success-step-icon { font-size: 20px; margin-bottom: 6px; }
+    .success-step-label { font-size: 11.5px; color: var(--muted); line-height: 1.4; }
+    .success-close-btn { background: rgba(255,255,255,0.07); border: 0.5px solid var(--border); border-radius: 50px; padding: 12px 28px; color: var(--text); font-size: 14px; cursor: pointer; font-family: var(--font-body); transition: all 0.2s; }
+    .success-close-btn:hover { background: rgba(255,255,255,0.13); }
+
+    /* Toast notification */
+    .toast {
+      position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(80px);
+      background: #1a1a2e; border: 0.5px solid var(--border); border-radius: 50px;
+      padding: 12px 22px; font-size: 14px; font-weight: 500; z-index: 2000;
+      display: flex; align-items: center; gap: 10px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+      transition: transform 0.4s cubic-bezier(0.32,0,0.14,1), opacity 0.4s;
+      opacity: 0; white-space: nowrap;
     }
-
-    .sw4 {
-      background: radial-gradient(circle at 30% 30%, #d4e8f0, #a0c4d8);
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 0.5px solid var(--border);
-      margin-top: 120px;
-      padding: 40px 48px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 28px;
-      list-style: none;
-    }
-
-    .footer-links a {
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover {
-      color: var(--text);
-    }
-
-    /* ── ANIMATIONS ── */
-    @keyframes antigravity {
-
-      0%,
-      100% {
-        transform: translateY(0px) rotate(-1.5deg);
-      }
-
-      25% {
-        transform: translateY(-18px) rotate(1deg);
-      }
-
-      50% {
-        transform: translateY(-30px) rotate(2deg);
-      }
-
-      75% {
-        transform: translateY(-16px) rotate(-0.5deg);
-      }
-    }
-
-    @keyframes floatSlow {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-18px);
-      }
-    }
-
-    @keyframes floatFast {
-
-      0%,
-      100% {
-        transform: translateY(0) rotate(8deg);
-      }
-
-      50% {
-        transform: translateY(-22px) rotate(-6deg);
-      }
-    }
-
-    @keyframes spin {
-      from {
-        transform: translate(-50%, -50%) rotate(0deg);
-      }
-
-      to {
-        transform: translate(-50%, -50%) rotate(360deg);
-      }
-    }
-
-    @keyframes shimmer {
-      0% {
-        left: -100%;
-      }
-
-      100% {
-        left: 200%;
-      }
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(28px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes pulseDot {
-
-      0%,
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: 0.5;
-        transform: scale(0.7);
-      }
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
-      nav {
-        padding: 16px 20px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .features {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .specs-grid {
-        grid-template-columns: 1fr;
-      }
-
-      footer {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-      }
-
-      .footer-links {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-    }
-
-    /* ── PRODUCT SHOWCASE ── */
-    .product-showcase {
-      max-width: 1200px;
-      margin: 140px auto 0;
-      padding: 0 24px;
-    }
-
-    .product-block {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 70px;
-      align-items: center;
-      margin-bottom: 160px;
-    }
-
-    .product-block.reverse .product-visual {
-      order: 2;
-    }
-
-    .product-block.reverse .product-content {
-      order: 1;
-    }
-
-    .product-label {
-      font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--purple);
-      margin-bottom: 16px;
-    }
-
-    .product-title {
-      font-family: var(--font-display);
-      font-size: clamp(38px, 5vw, 68px);
-      line-height: 1;
-      letter-spacing: -2px;
-      margin-bottom: 22px;
-    }
-
-    .product-title span {
-      background: linear-gradient(135deg, #ffffff, #7cf0e4);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .product-desc {
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.8;
-      max-width: 520px;
-      margin-bottom: 30px;
-    }
-
-    .product-specs {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin-bottom: 36px;
-    }
-
-    .product-spec {
-      background: rgba(255, 255, 255, 0.04);
-      border: 0.5px solid rgba(255, 255, 255, 0.08);
-      border-radius: 18px;
-      padding: 22px;
-      transition: 0.25s;
-    }
-
-    .product-spec:hover {
-      transform: translateY(-8px);
-      background: rgba(255, 255, 255, 0.06);
-    }
-
-    .product-spec strong {
-      display: block;
-      font-size: 26px;
-      font-family: var(--font-display);
-      margin-bottom: 8px;
-    }
-
-    .product-spec span {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .product-actions {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .product-btn-primary {
-      background: linear-gradient(135deg, #7c5cff, #4c9eff);
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      border-radius: 999px;
-      font-size: 14px;
-      cursor: pointer;
-      transition: 0.25s;
-    }
-
-    .product-btn-primary:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(124, 92, 255, 0.4);
-    }
-
-    .product-btn-secondary {
-      background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      color: white;
-      padding: 15px 28px;
-      border-radius: 999px;
-      font-size: 14px;
-      cursor: pointer;
-      transition: 0.25s;
-    }
-
-    .product-btn-secondary:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255, 255, 255, 0.35);
-    }
-
-    /* VISUALS */
-    .product-visual {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 500px;
-    }
-
-    .visual-glow {
-      position: absolute;
-      width: 340px;
-      height: 340px;
-      border-radius: 50%;
-      filter: blur(90px);
-      opacity: 0.45;
-      animation: floatSlow 7s ease-in-out infinite;
-    }
-
-    .watch-glow {
-      background: rgba(255, 100, 180, 0.28);
-    }
-
-    .mac-glow {
-      background: rgba(124, 92, 255, 0.28);
-    }
-
-    .ipad-glow {
-      background: rgba(0, 220, 200, 0.22);
-    }
-
-    /* WATCH */
-    .watch-device {
-      width: 240px;
-      height: 300px;
-      position: relative;
-      animation: antigravity 5s ease-in-out infinite;
-    }
-
-    .watch-band-top,
-    .watch-band-bottom {
-      width: 90px;
-      height: 90px;
-      background: linear-gradient(180deg, #1f1f2e, #0c0c14);
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      border-radius: 26px;
-    }
-
-    .watch-band-top {
-      top: 0;
-    }
-
-    .watch-band-bottom {
-      bottom: 0;
-    }
-
-    .watch-body {
-      width: 220px;
-      height: 220px;
-      border-radius: 60px;
-      background: linear-gradient(145deg, #2b2b3f, #12121e);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      position: absolute;
-      top: 40px;
-      left: 10px;
-      overflow: hidden;
-      box-shadow:
-        0 0 40px rgba(255, 80, 140, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    }
-
-    .watch-screen {
-      position: absolute;
-      inset: 12px;
-      border-radius: 48px;
-      background: radial-gradient(circle at top, #2a1b4d, #0a0a12);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .watch-time {
-      font-family: var(--font-display);
-      font-size: 54px;
-      font-weight: 700;
-    }
-
-    .watch-heart {
-      margin-top: 10px;
-      color: #ff6b9d;
-      font-size: 18px;
-    }
-
-    /* MACBOOK */
-    .macbook-device {
-      width: 520px;
-      animation: antigravity 6s ease-in-out infinite;
-    }
-
-    .mac-screen {
-      height: 320px;
-      border-radius: 26px 26px 12px 12px;
-      background: linear-gradient(145deg, #1d1d30, #090912);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 14px;
-      box-shadow:
-        0 0 60px rgba(124, 92, 255, 0.28),
-        inset 0 1px 0 rgba(255, 255, 255, 0.08);
-    }
-
-    .mac-display {
-      width: 100%;
-      height: 100%;
-      border-radius: 18px;
-      background:
-        radial-gradient(circle at top right, rgba(124, 92, 255, 0.5), transparent 30%),
-        radial-gradient(circle at bottom left, rgba(0, 220, 200, 0.3), transparent 35%),
-        linear-gradient(180deg, #111827, #050510);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .mac-display::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
-    }
-
-    .mac-base {
-      width: 560px;
-      height: 18px;
-      background: linear-gradient(180deg, #b7b7c2, #6e6e7c);
-      margin-left: -20px;
-      border-radius: 0 0 24px 24px;
-    }
-
-    /* IPAD */
-    .ipad-device {
-      width: 340px;
-      height: 460px;
-      border-radius: 36px;
-      background: linear-gradient(145deg, #1f1f30, #090910);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 16px;
-      position: relative;
-      animation: antigravity 5.5s ease-in-out infinite;
-      box-shadow:
-        0 0 50px rgba(0, 220, 200, 0.22),
-        inset 0 1px 0 rgba(255, 255, 255, 0.08);
-    }
-
-    .ipad-screen {
-      width: 100%;
-      height: 100%;
-      border-radius: 24px;
-      background:
-        radial-gradient(circle at top left, rgba(124, 92, 255, 0.35), transparent 30%),
-        radial-gradient(circle at bottom right, rgba(0, 220, 200, 0.3), transparent 35%),
-        linear-gradient(180deg, #0c1020, #05060d);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .ipad-ui {
-      position: absolute;
-      inset: 24px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    .ipad-card {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: 18px;
-      backdrop-filter: blur(10px);
-    }
-
-    @media (max-width: 992px) {
-      .product-block {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .product-desc {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .product-actions {
-        justify-content: center;
-      }
-
-      .macbook-device {
-        transform: scale(0.8);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .product-specs {
-        grid-template-columns: 1fr;
-      }
-
-      .macbook-device {
-        transform: scale(0.6);
-      }
-    }
+    .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+    .toast-icon { font-size: 16px; }
   </style>
 </head>
-
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#" class="nav-logo">&#9670; <span>i</span>Phone</a>
-    <ul class="nav-links">
-      <li><a href="#specs">Thông số</a></li>
-      <li><a href="#colors">Màu sắc</a></li>
-      <li><a href="#">So sánh</a></li>
-      <li><a href="#">Hỗ trợ</a></li>
-    </ul>
-    <a href="#" class="nav-cta">Mua ngay →</a>
-  </nav>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">&#9670; <span>Apple</span></a>
+  <ul class="nav-links">
+    <li><a href="#iphone">iPhone</a></li>
+    <li><a href="#camera">Camera</a></li>
+    <li><a href="#lineup">Sản phẩm</a></li>
+    <li><a href="#pricing">Giá</a></li>
+    <li><a href="#colors">Màu sắc</a></li>
+  </ul>
+  <div class="nav-right">
+    <span class="nav-search">🔍 Tìm kiếm</span>
+    <button class="nav-cart-btn" onclick="openCart()">
+      🛒 Giỏ hàng
+      <span class="cart-badge" id="cartBadge">0</span>
+    </button>
+  </div>
+</nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="orb orb1"></div>
-    <div class="orb orb2"></div>
-    <div class="orb orb3"></div>
+<!-- HERO -->
+<section class="hero" id="iphone">
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
 
-    <div class="badge">iPhone 16 Pro · Ra mắt 2024</div>
+  <div class="badge">iPhone 16 Pro · Ra mắt 2024</div>
 
-    <!-- PHONE SCENE -->
-    <div class="phone-scene">
-      <div class="orbit-ring ring1"></div>
-      <div class="orbit-ring ring2"></div>
-      <div class="orbit-dot d1"></div>
-      <div class="orbit-dot d2"></div>
-      <div class="orbit-dot d3"></div>
-      <div class="orbit-dot d4"></div>
-      <div class="phone">
-        <div class="side-btn sb-r"></div>
-        <div class="side-btn sb-l1"></div>
-        <div class="side-btn sb-l2"></div>
-        <div class="phone-screen">
-          <div class="phone-notch"></div>
-          <div class="icon-grid">
-            <div class="app-icon a1"></div>
-            <div class="app-icon a2"></div>
-            <div class="app-icon a3"></div>
-            <div class="app-icon a4"></div>
-            <div class="app-icon a5"></div>
-            <div class="app-icon a6"></div>
-            <div class="app-icon a7"></div>
-            <div class="app-icon a8"></div>
-            <div class="app-icon a9"></div>
-          </div>
-          <div class="screen-time">
-            <div class="time-txt">THỨ SÁU</div>
-            <div class="time-big">9:41</div>
-          </div>
+  <div class="phone-scene">
+    <div class="orbit-ring ring1"></div>
+    <div class="orbit-ring ring2"></div>
+    <div class="orbit-dot d1"></div>
+    <div class="orbit-dot d2"></div>
+    <div class="orbit-dot d3"></div>
+    <div class="orbit-dot d4"></div>
+    <div class="phone">
+      <div class="side-btn sb-r"></div>
+      <div class="side-btn sb-l1"></div>
+      <div class="side-btn sb-l2"></div>
+      <div class="phone-screen">
+        <div class="phone-notch"></div>
+        <div class="icon-grid">
+          <div class="app-icon a1"></div><div class="app-icon a2"></div><div class="app-icon a3"></div>
+          <div class="app-icon a4"></div><div class="app-icon a5"></div><div class="app-icon a6"></div>
+          <div class="app-icon a7"></div><div class="app-icon a8"></div><div class="app-icon a9"></div>
+        </div>
+        <div class="screen-time">
+          <div class="time-txt">THỨ SÁU</div>
+          <div class="time-big">9:41</div>
         </div>
       </div>
     </div>
+  </div>
 
-    <h1>Vượt thoát khỏi<br><span class="grad">mọi giới hạn</span></h1>
-    <p class="sub">Chip A18 Pro. Camera 48MP thế hệ mới. Khung titan siêu mỏng. Trải nghiệm đỉnh cao trong lòng bàn tay
-      bạn.</p>
+  <h1>Vượt thoát khỏi<br><span class="grad">mọi giới hạn</span></h1>
+  <p class="hero-sub">Chip A18 Pro. Camera 48MP thế hệ mới. Khung titan siêu mỏng. Trải nghiệm đỉnh cao trong lòng bàn tay bạn.</p>
 
-    <div class="cta-row">
-      <button class="btn-buy">Mua iPhone 16 Pro</button>
-      <button class="btn-learn">Tìm hiểu thêm ↓</button>
-    </div>
+  <div class="cta-row">
+    <button class="btn-buy">Mua iPhone 16 Pro</button>
+    <button class="btn-learn">Khám phá thêm ↓</button>
+  </div>
 
-    <div class="features">
-      <div class="feat">
-        <span class="feat-icon" style="animation: floatSlow 5s ease-in-out infinite;">⚡</span>
-        <div class="feat-title">Chip A18 Pro</div>
-        <div class="feat-desc">Nhanh hơn 20%<br>so với thế hệ trước</div>
-      </div>
-      <div class="feat">
-        <span class="feat-icon" style="animation: floatSlow 5s ease-in-out infinite 0.8s;">📸</span>
-        <div class="feat-title">Camera Pro</div>
-        <div class="feat-desc">48MP · Zoom quang học 5×</div>
-      </div>
-      <div class="feat">
-        <span class="feat-icon" style="animation: floatSlow 5s ease-in-out infinite 1.6s;">🔋</span>
-        <div class="feat-title">Pin lâu hơn</div>
-        <div class="feat-desc">Dùng cả ngày dài không lo hết pin</div>
-      </div>
-      <div class="feat">
-        <span class="feat-icon" style="animation: floatSlow 5s ease-in-out infinite 2.4s;">💎</span>
-        <div class="feat-title">Titan cao cấp</div>
-        <div class="feat-desc">Khung titan siêu bền, nhẹ đến bất ngờ</div>
-      </div>
-    </div>
-  </section>
+  <div class="hero-features">
+    <div class="feat"><span class="feat-icon" style="animation:floatSlow 5s ease-in-out infinite">⚡</span><div class="feat-title">Chip A18 Pro</div><div class="feat-desc">Nhanh hơn 20% so với thế hệ trước</div></div>
+    <div class="feat"><span class="feat-icon" style="animation:floatSlow 5s ease-in-out infinite 0.8s">📸</span><div class="feat-title">Camera Pro</div><div class="feat-desc">48MP · Zoom quang học 5×</div></div>
+    <div class="feat"><span class="feat-icon" style="animation:floatSlow 5s ease-in-out infinite 1.6s">🔋</span><div class="feat-title">Pin lâu hơn</div><div class="feat-desc">Dùng cả ngày dài không lo hết pin</div></div>
+    <div class="feat"><span class="feat-icon" style="animation:floatSlow 5s ease-in-out infinite 2.4s">💎</span><div class="feat-title">Titan cao cấp</div><div class="feat-desc">Khung titan siêu bền, nhẹ đến bất ngờ</div></div>
+  </div>
+</section>
 
-  <!-- SPECS -->
-  <section class="specs-section" id="specs">
-    <div class="section-label">Thông số kỹ thuật</div>
-    <h2 class="section-title">Được xây dựng để<br><span>vượt trội</span></h2>
-
-    <div class="specs-grid">
-      <div class="spec-card">
-        <div class="spec-num c-purple">48<span class="spec-unit">MP</span></div>
-        <div class="spec-label">Camera Fusion chính độ phân giải cao với kính mắt thấu kính mới</div>
-      </div>
-      <div class="spec-card">
-        <div class="spec-num c-teal">A18<span class="spec-unit" style="font-size:18px;"> Pro</span></div>
-        <div class="spec-label">Chip silicon tiên tiến nhất Apple từng tạo ra, tích hợp Neural Engine 16-lõi</div>
-      </div>
-      <div class="spec-card">
-        <div class="spec-num c-pink">4<span class="spec-unit">K</span></div>
-        <div class="spec-label">Quay video ProRes 4K 120fps lần đầu tiên trên iPhone</div>
-      </div>
-      <div class="spec-card">
-        <div class="spec-num c-amber">5<span class="spec-unit">×</span></div>
-        <div class="spec-label">Zoom quang học 5× với ống kính Tetraprism tiên tiến</div>
-      </div>
-      <div class="spec-card">
-        <div class="spec-num c-purple">27<span class="spec-unit" style="font-size:20px;">h</span></div>
-        <div class="spec-label">Thời lượng phát video lên đến 27 giờ liên tục với một lần sạc</div>
-      </div>
-      <div class="spec-card">
-        <div class="spec-num c-teal">Ti<span class="spec-unit" style="font-size:20px;">tan</span></div>
-        <div class="spec-label">Thiết kế khung titan cấp hàng không vũ trụ, nhẹ và cứng vượt trội</div>
+<!-- REAL PRODUCT IMAGES — iPhone Hero -->
+<div class="section-wrap" style="padding-top:100px;">
+  <div class="section-label reveal">Hình ảnh thực tế</div>
+  <h2 class="section-title reveal">Thiết kế <span class="c-teal">đẹp mê hồn</span></h2>
+  <div class="product-hero-grid">
+    <div class="p-hero-card reveal-left">
+      <img src="https://images.unsplash.com/photo-1695048133142-1a20484bce71?w=900&q=85&auto=format&fit=crop" alt="iPhone 16 Pro" loading="lazy"/>
+      <div class="p-hero-overlay">
+        <div class="p-hero-tag">iPhone 16 Pro</div>
+        <div class="p-hero-name">Titan. Titanium.</div>
+        <div class="p-hero-price">Từ 29.999.000 đ</div>
+        <div class="p-hero-desc">Camera chuyên nghiệp, chip A18 Pro mạnh mẽ, thiết kế titan sang trọng.</div>
+        <div class="p-hero-btn">Mua ngay →</div>
       </div>
     </div>
-  </section>
-
-  <!-- COLORS -->
-  <section class="color-section" id="colors">
-    <div class="section-label">Bộ sưu tập màu</div>
-    <h2 class="section-title">Chọn màu sắc<br><span>của bạn</span></h2>
-
-    <div class="colors-row">
-      <div class="color-opt active" onclick="setColor(this)">
-        <div class="color-swatch sw1"></div>
-        <span class="color-name">Desert Titanium</span>
-      </div>
-      <div class="color-opt" onclick="setColor(this)">
-        <div class="color-swatch sw2"></div>
-        <span class="color-name">Natural Titanium</span>
-      </div>
-      <div class="color-opt" onclick="setColor(this)">
-        <div class="color-swatch sw3"></div>
-        <span class="color-name">Black Titanium</span>
-      </div>
-      <div class="color-opt" onclick="setColor(this)">
-        <div class="color-swatch sw4"></div>
-        <span class="color-name">White Titanium</span>
+    <div class="p-hero-card reveal-right">
+      <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=900&q=85&auto=format&fit=crop" alt="iPhone camera" loading="lazy"/>
+      <div class="p-hero-overlay">
+        <div class="p-hero-tag">Camera System</div>
+        <div class="p-hero-name">Chụp như Pro.</div>
+        <div class="p-hero-price">Camera 48MP · 5× Zoom</div>
+        <div class="p-hero-desc">Hệ thống camera ba ống kính chuyên nghiệp với khả năng quay ProRes 4K 120fps.</div>
+        <div class="p-hero-btn">Khám phá →</div>
       </div>
     </div>
-  </section>
-  <section class="product-showcase">
-    <div class="product-block">
+  </div>
+</div>
 
-      <div class="product-content">
-        <div class="product-label">Apple Watch Series 10</div>
-
-        <h2 class="product-title">
-          Sức mạnh của<br>
-          <span>tương lai trên cổ tay</span>
-        </h2>
-
-        <p class="product-desc">
-          Theo dõi sức khỏe nâng cao. Màn hình Always‑On Retina sáng hơn.
-          Thiết kế siêu mỏng kết hợp hiệu năng mạnh mẽ cho mọi khoảnh khắc.
-        </p>
-
-        <div class="product-specs">
-          <div class="product-spec">
-            <strong>36h</strong>
-            <span>Thời lượng pin cho cả ngày dài hoạt động.</span>
-          </div>
-
-          <div class="product-spec">
-            <strong>S10</strong>
-            <span>Chip Apple Silicon mới tối ưu AI và cảm biến.</span>
-          </div>
-
-          <div class="product-spec">
-            <strong>Retina</strong>
-            <span>Màn hình sáng hơn và hiển thị sắc nét ngoài trời.</span>
-          </div>
-
-          <div class="product-spec">
-            <strong>Health+</strong>
-            <span>Theo dõi nhịp tim, giấc ngủ và tập luyện chuyên sâu.</span>
-          </div>
-        </div>
-
-        <div class="product-actions">
-          <button class="product-btn-primary">Khám phá Apple Watch</button>
-          <button class="product-btn-secondary">Xem chi tiết</button>
+<!-- CAMERA SHOWCASE -->
+<div class="section-wrap" id="camera">
+  <div class="section-label reveal">Camera System</div>
+  <h2 class="section-title reveal">Thấy nhiều hơn.<br><span class="c-pink">Chụp đẹp hơn.</span></h2>
+  <div class="camera-grid">
+    <div class="cam-main reveal-left">
+      <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=85&auto=format&fit=crop" alt="Landscape photo" loading="lazy"/>
+      <div class="cam-main-overlay">
+        <div class="cam-label">Ống kính chính</div>
+        <div class="cam-val">48MP Fusion</div>
+        <div class="cam-specs">
+          <span class="cam-spec-pill">f/1.78 aperture</span>
+          <span class="cam-spec-pill">Second-gen 3D sensor‑shift OIS</span>
+          <span class="cam-spec-pill">100% Focus Pixels</span>
         </div>
       </div>
-
-      <div class="product-visual">
-        <div class="visual-glow watch-glow"></div>
-
-        <div class="watch-device">
-          <div class="watch-band-top"></div>
-          <div class="watch-band-bottom"></div>
-
-          <div class="watch-body">
-            <div class="watch-screen">
-              <div class="watch-time">10:09</div>
-              <div class="watch-heart">♥ 72 BPM</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
-  </section>
-
-  <!-- MACBOOK -->
-  <section class="product-showcase">
-    <div class="product-block reverse">
-
-      <div class="product-content">
-        <div class="product-label">MacBook Pro M4</div>
-
-        <h2 class="product-title">
-          Hiệu năng chuyên nghiệp.<br>
-          <span>Không giới hạn.</span>
-        </h2>
-
-        <p class="product-desc">
-          Chip Apple M4 mang đến sức mạnh vượt trội cho lập trình,
-          AI, dựng video và workflow sáng tạo chuyên sâu.
-          Mọi thứ đều nhanh hơn, mượt hơn và yên tĩnh hơn.
-        </p>
-
-        <div class="product-specs">
-          <div class="product-spec">
-            <strong>M4</strong>
-            <span>CPU và GPU thế hệ mới tối ưu cho AI.</span>
-          </div>
-
-          <div class="product-spec">
-            <strong>22h</strong>
-            <span>Pin cả ngày cho công việc và sáng tạo.</span>
-          </div>
-
-          <div class="product-spec">
-            <strong>XDR</strong>
-            <span>Liquid Retina XDR hiển thị cực kỳ sống động.</span>
-          </div>
-
-          <div class="product-spec">
-            <strong>Ray Tracing</strong>
-            <span>Đồ họa mạnh mẽ cho 3D và gaming.</span>
-          </div>
-        </div>
-
-        <div class="product-actions">
-          <button class="product-btn-primary">Mua MacBook Pro</button>
-          <button class="product-btn-secondary">Khám phá M4</button>
-        </div>
+    <div class="cam-shot reveal-right" style="transition-delay:0.1s">
+      <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=700&q=85&auto=format&fit=crop" alt="Night sky" loading="lazy"/>
+      <div class="cam-shot-overlay">
+        <div class="cam-label">Chụp ban đêm</div>
+        <div class="cam-val c-purple">Night Mode</div>
       </div>
-
-      <div class="product-visual">
-        <div class="visual-glow mac-glow"></div>
-
-        <div class="macbook-device">
-          <div class="mac-screen">
-            <div class="mac-display"></div>
-          </div>
-          <div class="mac-base"></div>
-        </div>
-      </div>
-
     </div>
-  </section>
-
-  <!-- IPAD -->
-  <section class="product-showcase">
-    <div class="product-block">
-
-      <div class="product-content">
-        <div class="product-label">iPad Pro M4</div>
-
-        <h2 class="product-title">
-          Mỏng không tưởng.<br>
-          <span>Mạnh không giới hạn.</span>
-        </h2>
-
-        <p class="product-desc">
-          iPad Pro M4 kết hợp màn hình Ultra Retina XDR với sức mạnh AI,
-          Apple Pencil Pro và khả năng sáng tạo đỉnh cao trong một thiết kế siêu mỏng.
-        </p>
-
-        <div class="product-specs">
-          <div class="product-spec">
-            <strong>5.1mm</strong>
-            <span>Thiết kế mỏng nhất Apple từng tạo ra.</span>
-          </div>
-
-          <div class="product-spec">
-            <strong>OLED</strong>
-            <span>Màn hình Ultra Retina XDR hai lớp OLED.</span>
-          </div>
-
-          <div class="product-spec">
-            <strong>M4</strong>
-            <span>Hiệu suất AI và đồ họa vượt trội.</span>
-          </div>
-
-          <div class="product-spec">
-            <strong>Pencil Pro</strong>
-            <span>Tương tác sáng tạo tự nhiên và chính xác.</span>
-          </div>
-        </div>
-
-        <div class="product-actions">
-          <button class="product-btn-primary">Khám phá iPad Pro</button>
-          <button class="product-btn-secondary">Xem trải nghiệm</button>
-        </div>
+    <div class="cam-shot reveal-right" style="transition-delay:0.2s">
+      <img src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?w=700&q=85&auto=format&fit=crop" alt="Portrait mode" loading="lazy"/>
+      <div class="cam-shot-overlay">
+        <div class="cam-label">Chân dung</div>
+        <div class="cam-val c-pink">Portrait · 5× Zoom</div>
       </div>
-
-      <div class="product-visual">
-        <div class="visual-glow ipad-glow"></div>
-
-        <div class="ipad-device">
-          <div class="ipad-screen">
-            <div class="ipad-ui">
-              <div class="ipad-card"></div>
-              <div class="ipad-card"></div>
-              <div class="ipad-card"></div>
-              <div class="ipad-card"></div>
-              <div class="ipad-card"></div>
-              <div class="ipad-card"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
-  </section>
+  </div>
+</div>
 
-  <!-- FOOTER -->
-  <footer>
+<!-- SPECS -->
+<div class="section-wrap">
+  <div class="section-label reveal">Thông số kỹ thuật</div>
+  <h2 class="section-title reveal">Được xây dựng để <span class="c-teal">vượt trội</span></h2>
+  <div class="specs-grid">
+    <div class="spec-card reveal" style="transition-delay:0s"><div class="spec-num c-purple">48<span class="spec-unit">MP</span></div><div class="spec-label">Camera Fusion chính độ phân giải cao với thấu kính mới</div></div>
+    <div class="spec-card reveal" style="transition-delay:0.1s"><div class="spec-num c-teal">A18<span class="spec-unit" style="font-size:18px"> Pro</span></div><div class="spec-label">Chip silicon tiên tiến nhất, Neural Engine 16-lõi</div></div>
+    <div class="spec-card reveal" style="transition-delay:0.2s"><div class="spec-num c-pink">4<span class="spec-unit">K</span></div><div class="spec-label">ProRes 4K 120fps lần đầu tiên trên iPhone</div></div>
+    <div class="spec-card reveal" style="transition-delay:0.3s"><div class="spec-num c-amber">5<span class="spec-unit">×</span></div><div class="spec-label">Zoom quang học 5× với ống kính Tetraprism</div></div>
+    <div class="spec-card reveal" style="transition-delay:0.4s"><div class="spec-num c-purple">27<span class="spec-unit" style="font-size:20px">h</span></div><div class="spec-label">Thời lượng phát video tới 27 giờ liên tục</div></div>
+    <div class="spec-card reveal" style="transition-delay:0.5s"><div class="spec-num c-teal" style="font-size:36px">Titan<span class="spec-unit" style="font-size:14px"></span></div><div class="spec-label">Khung titan cấp hàng không vũ trụ, nhẹ và cứng vượt trội</div></div>
+  </div>
+</div>
+
+<!-- PRODUCT LINEUP -->
+<div class="section-wrap" id="lineup">
+  <div class="section-label reveal">Bộ sưu tập Apple 2024</div>
+  <h2 class="section-title reveal">Hệ sinh thái <span class="c-amber">hoàn hảo</span></h2>
+  <div class="lineup-grid">
+
+    <!-- Apple Watch -->
+    <div class="lineup-card reveal" style="transition-delay:0s">
+      <img src="https://images.unsplash.com/photo-1551816230-ef5deaed4a26?w=600&q=85&auto=format&fit=crop" alt="Apple Watch" loading="lazy"/>
+      <div class="lineup-overlay">
+        <div class="lineup-tag" style="color:var(--teal);border-color:rgba(124,240,228,0.4);background:rgba(124,240,228,0.12)">Apple Watch</div>
+        <div class="lineup-name">Watch Series 10</div>
+        <div class="lineup-price" style="color:var(--teal)">Từ 11.999.000 đ</div>
+        <div class="lineup-btn">Khám phá →</div>
+      </div>
+    </div>
+
+    <!-- MacBook -->
+    <div class="lineup-card reveal" style="transition-delay:0.15s">
+      <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=600&q=85&auto=format&fit=crop" alt="MacBook Pro" loading="lazy"/>
+      <div class="lineup-overlay">
+        <div class="lineup-tag" style="color:var(--purple);border-color:rgba(124,92,255,0.4);background:rgba(124,92,255,0.12)">MacBook Pro</div>
+        <div class="lineup-name">MacBook Pro M4</div>
+        <div class="lineup-price" style="color:var(--purple)">Từ 39.999.000 đ</div>
+        <div class="lineup-btn">Khám phá →</div>
+      </div>
+    </div>
+
+    <!-- iPad Pro -->
+    <div class="lineup-card reveal" style="transition-delay:0.3s">
+      <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&q=85&auto=format&fit=crop" alt="iPad Pro" loading="lazy"/>
+      <div class="lineup-overlay">
+        <div class="lineup-tag" style="color:var(--pink);border-color:rgba(255,107,157,0.4);background:rgba(255,107,157,0.12)">iPad Pro</div>
+        <div class="lineup-name">iPad Pro M4</div>
+        <div class="lineup-price" style="color:var(--pink)">Từ 27.999.000 đ</div>
+        <div class="lineup-btn">Khám phá →</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- APPLE WATCH DETAIL -->
+<div class="section-wrap">
+  <div class="section-label reveal">Apple Watch Series 10</div>
+  <h2 class="section-title reveal">Đồng hành <span class="c-teal">mọi khoảnh khắc</span></h2>
+  <div class="product-hero-grid">
+    <div class="p-hero-card reveal-left" style="min-height:420px">
+      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=900&q=85&auto=format&fit=crop" alt="Apple Watch lifestyle" loading="lazy"/>
+      <div class="p-hero-overlay">
+        <div class="p-hero-tag" style="background:rgba(124,240,228,0.18);color:var(--teal);border-color:rgba(124,240,228,0.35)">Apple Watch Series 10</div>
+        <div class="p-hero-name">Mỏng nhất từ trước đến nay</div>
+        <div class="p-hero-price" style="color:var(--teal)">Từ 11.999.000 đ</div>
+        <div class="p-hero-desc">Màn hình lớn hơn. Phát hiện Sleep Apnea. Chip S10 siêu nhanh. Sạc nhanh hơn 30%.</div>
+        <div class="p-hero-btn">Mua ngay →</div>
+      </div>
+    </div>
+    <div class="p-hero-card reveal-right" style="min-height:420px">
+      <img src="https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=900&q=85&auto=format&fit=crop" alt="Apple Watch workout" loading="lazy"/>
+      <div class="p-hero-overlay">
+        <div class="p-hero-tag" style="background:rgba(74,222,128,0.15);color:var(--green);border-color:rgba(74,222,128,0.35)">Sức khỏe & Thể thao</div>
+        <div class="p-hero-name">Theo dõi sức khoẻ toàn diện</div>
+        <div class="p-hero-price" style="color:var(--green)">ECG · SpO2 · Nhiệt độ</div>
+        <div class="p-hero-desc">Phát hiện ngủ ngáy, theo dõi nhịp tim 24/7, GPS chính xác cho mọi hoạt động.</div>
+        <div class="p-hero-btn">Tìm hiểu thêm →</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MACBOOK DETAIL -->
+<div class="section-wrap">
+  <div class="section-label reveal">MacBook Pro M4</div>
+  <h2 class="section-title reveal">Sức mạnh <span class="c-purple">không giới hạn</span></h2>
+  <div class="product-hero-grid">
+    <div class="p-hero-card reveal-left" style="min-height:420px">
+      <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=900&q=85&auto=format&fit=crop" alt="MacBook Pro" loading="lazy"/>
+      <div class="p-hero-overlay">
+        <div class="p-hero-tag" style="background:rgba(124,92,255,0.18);color:var(--purple);border-color:rgba(124,92,255,0.35)">MacBook Pro 14" · 16"</div>
+        <div class="p-hero-name">Chip M4. Pro. Max.</div>
+        <div class="p-hero-price" style="color:var(--purple)">Từ 39.999.000 đ</div>
+        <div class="p-hero-desc">Chip M4 mạnh nhất trong lịch sử Mac. Pin lên đến 24 giờ. Màn hình Liquid Retina XDR.</div>
+        <div class="p-hero-btn">Mua ngay →</div>
+      </div>
+    </div>
+    <div class="p-hero-card reveal-right" style="min-height:420px">
+      <img src="https://images.unsplash.com/photo-1484788984921-03950022c9ef?w=900&q=85&auto=format&fit=crop" alt="MacBook workspace" loading="lazy"/>
+      <div class="p-hero-overlay">
+        <div class="p-hero-tag" style="background:rgba(96,165,250,0.15);color:var(--blue);border-color:rgba(96,165,250,0.35)">Năng suất & Sáng tạo</div>
+        <div class="p-hero-name">Thiết kế cho người tạo ra</div>
+        <div class="p-hero-price" style="color:var(--blue)">Up to 128GB RAM · 8TB SSD</div>
+        <div class="p-hero-desc">Xử lý video 8K ProRes, render 3D, AI — tất cả trong thiết kế siêu mỏng và nhẹ.</div>
+        <div class="p-hero-btn">Cấu hình ngay →</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IPAD PRO DETAIL -->
+<div class="section-wrap">
+  <div class="section-label reveal">iPad Pro M4</div>
+  <h2 class="section-title reveal">Mỏng tới mức <span class="c-pink">không tưởng</span></h2>
+  <div class="product-hero-grid">
+    <div class="p-hero-card reveal-left" style="min-height:420px">
+      <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900&q=85&auto=format&fit=crop" alt="iPad Pro gaming" loading="lazy"/>
+      <div class="p-hero-overlay">
+        <div class="p-hero-tag" style="background:rgba(255,107,157,0.15);color:var(--pink);border-color:rgba(255,107,157,0.35)">iPad Pro 11" · 13"</div>
+        <div class="p-hero-name">Siêu máy tính mỏng nhất thế giới</div>
+        <div class="p-hero-price" style="color:var(--pink)">Từ 27.999.000 đ</div>
+        <div class="p-hero-desc">Màn hình OLED Ultra Retina XDR đầu tiên. Chip M4 siêu mạnh. Dày chỉ 5.1mm.</div>
+        <div class="p-hero-btn">Mua ngay →</div>
+      </div>
+    </div>
+    <div class="p-hero-card reveal-right" style="min-height:420px">
+      <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?w=900&q=85&auto=format&fit=crop" alt="iPad creative" loading="lazy"/>
+      <div class="p-hero-overlay">
+        <div class="p-hero-tag" style="background:rgba(255,186,73,0.15);color:var(--amber);border-color:rgba(255,186,73,0.35)">Apple Pencil Pro</div>
+        <div class="p-hero-name">Sáng tạo không có giới hạn</div>
+        <div class="p-hero-price" style="color:var(--amber)">Apple Pencil Pro · Magic Keyboard</div>
+        <div class="p-hero-desc">Squeeze, hover, barrel roll — Apple Pencil Pro mang lại trải nghiệm vẽ chưa từng có.</div>
+        <div class="p-hero-btn">Tìm hiểu thêm →</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<div class="section-wrap" id="pricing">
+  <div class="section-label reveal">Bảng giá</div>
+  <h2 class="section-title reveal">Chọn gói <span class="c-amber">phù hợp</span> với bạn</h2>
+  <div class="pricing-grid">
+
+    <div class="price-card reveal" style="transition-delay:0s">
+      <div class="price-model">iPhone 16</div>
+      <div class="price-name">iPhone 16</div>
+      <div class="price-desc">Hiệu năng tuyệt vời cho mọi người dùng với chip A18.</div>
+      <div class="price-amount"><span>₫</span>22.999</div>
+      <div class="price-note">nghìn đồng · 128GB</div>
+      <ul class="price-features">
+        <li>Chip A18, 6-core GPU</li>
+        <li>Camera 48MP chính · 12MP UW</li>
+        <li>Màn hình Super Retina XDR 6.1"</li>
+        <li>Face ID · Dynamic Island</li>
+        <li>Pin 22 giờ phát video</li>
+        <li>Action Button mới</li>
+      </ul>
+      <button class="price-btn outline" onclick="addToCart('iphone16','iPhone 16','22999000','128GB · Đen','https://images.unsplash.com/photo-1695048133142-1a20484bce71?w=200&q=80&auto=format&fit=crop')">Thêm vào giỏ hàng</button>
+    </div>
+
+    <div class="price-card featured reveal" style="transition-delay:0.15s">
+      <div class="price-badge">Phổ biến nhất</div>
+      <div class="price-model">iPhone 16 Pro</div>
+      <div class="price-name">iPhone 16 Pro</div>
+      <div class="price-desc">Camera Pro System và chip A18 Pro mạnh nhất cho sáng tạo chuyên nghiệp.</div>
+      <div class="price-amount"><span>₫</span>29.999</div>
+      <div class="price-note">nghìn đồng · 128GB</div>
+      <ul class="price-features">
+        <li>Chip A18 Pro, 6-core GPU</li>
+        <li>Camera 48MP · 48MP UW · 12MP 5× Tele</li>
+        <li>Màn hình ProMotion 120Hz 6.3"</li>
+        <li>ProRes 4K 120fps</li>
+        <li>Camera Control button</li>
+        <li>Pin 27 giờ phát video</li>
+        <li>Khung titan cấp hàng không</li>
+      </ul>
+      <button class="price-btn primary" onclick="addToCart('iphone16pro','iPhone 16 Pro','29999000','128GB · Desert Titanium','https://images.unsplash.com/photo-1695048133142-1a20484bce71?w=200&q=80&auto=format&fit=crop')">Thêm vào giỏ hàng</button>
+    </div>
+
+    <div class="price-card reveal" style="transition-delay:0.3s">
+      <div class="price-model">iPhone 16 Pro Max</div>
+      <div class="price-name">Pro Max</div>
+      <div class="price-desc">Màn hình lớn nhất, pin lâu nhất, camera mạnh nhất trong dòng iPhone.</div>
+      <div class="price-amount"><span>₫</span>34.999</div>
+      <div class="price-note">nghìn đồng · 256GB</div>
+      <ul class="price-features">
+        <li>Chip A18 Pro, 6-core GPU</li>
+        <li>Camera 48MP · 48MP UW · 12MP 5× Tele</li>
+        <li>Màn hình ProMotion 120Hz 6.9"</li>
+        <li>ProRes 4K 120fps · Log video</li>
+        <li>Pin 33 giờ phát video</li>
+        <li>Khung titan + kính Ceramic Shield</li>
+        <li>Apple Intelligence tích hợp</li>
+      </ul>
+      <button class="price-btn outline" onclick="addToCart('iphone16promax','iPhone 16 Pro Max','34999000','256GB · Black Titanium','https://images.unsplash.com/photo-1695048133142-1a20484bce71?w=200&q=80&auto=format&fit=crop')">Thêm vào giỏ hàng</button>
+    </div>
+  </div>
+</div>
+
+<!-- COLORS -->
+<section class="color-section" id="colors">
+  <div class="section-label reveal">Bộ sưu tập màu</div>
+  <h2 class="section-title reveal">Chọn màu sắc <span class="c-teal">của bạn</span></h2>
+  <div class="colors-row reveal">
+    <div class="color-opt active" onclick="setColor(this)">
+      <div class="color-swatch sw1"></div>
+      <span class="color-name">Desert Titanium</span>
+    </div>
+    <div class="color-opt" onclick="setColor(this)">
+      <div class="color-swatch sw2"></div>
+      <span class="color-name">Natural Titanium</span>
+    </div>
+    <div class="color-opt" onclick="setColor(this)">
+      <div class="color-swatch sw3"></div>
+      <span class="color-name">Black Titanium</span>
+    </div>
+    <div class="color-opt" onclick="setColor(this)">
+      <div class="color-swatch sw4"></div>
+      <span class="color-name">White Titanium</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">&#9670; <span>Apple</span></div>
+      <div class="footer-tagline">Được thiết kế để truyền cảm hứng. Được tạo ra để vượt trội.</div>
+    </div>
+    <div class="footer-col">
+      <h4>Sản phẩm</h4>
+      <ul>
+        <li><a href="#">iPhone 16 Pro</a></li>
+        <li><a href="#">Apple Watch Series 10</a></li>
+        <li><a href="#">MacBook Pro M4</a></li>
+        <li><a href="#">iPad Pro M4</a></li>
+        <li><a href="#">AirPods Pro</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Mua sắm</h4>
+      <ul>
+        <li><a href="#">Cửa hàng Apple</a></li>
+        <li><a href="#">Apple Store App</a></li>
+        <li><a href="#">Trả góp 0%</a></li>
+        <li><a href="#">Apple Trade In</a></li>
+        <li><a href="#">Đại lý ủy quyền</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Hỗ trợ</h4>
+      <ul>
+        <li><a href="#">Apple Support</a></li>
+        <li><a href="#">Bảo hành AppleCare+</a></li>
+        <li><a href="#">Sửa chữa & Dịch vụ</a></li>
+        <li><a href="#">Liên hệ Apple</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
     <span>© 2024 Apple Inc. Bảo lưu mọi quyền.</span>
-    <ul class="footer-links">
-      <li><a href="#">Quyền riêng tư</a></li>
-      <li><a href="#">Điều khoản sử dụng</a></li>
-      <li><a href="#">Sitemap</a></li>
-      <li><a href="#">Liên hệ Apple</a></li>
-    </ul>
-  </footer>
+    <div style="display:flex;gap:20px;flex-wrap:wrap">
+      <a href="#" style="color:var(--muted);text-decoration:none;font-size:12px;transition:color 0.2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">Quyền riêng tư</a>
+      <a href="#" style="color:var(--muted);text-decoration:none;font-size:12px;transition:color 0.2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">Điều khoản sử dụng</a>
+      <a href="#" style="color:var(--muted);text-decoration:none;font-size:12px;transition:color 0.2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">Sitemap</a>
+      <a href="#" style="color:var(--muted);text-decoration:none;font-size:12px;transition:color 0.2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">Liên hệ</a>
+    </div>
+  </div>
+</footer>
 
-  <script>
-    function setColor(el) {
-      document.querySelectorAll('.color-opt').forEach(o => o.classList.remove('active'));
-      el.classList.add('active');
+<!-- ══ CART OVERLAY ══ -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+<!-- ══ CART DRAWER ══ -->
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <div class="cart-title">Giỏ hàng <span id="cartCount">0 sản phẩm</span></div>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-body" id="cartBody">
+    <div class="cart-empty">
+      <div class="cart-empty-icon">🛒</div>
+      <p>Giỏ hàng của bạn đang trống.<br>Hãy chọn sản phẩm yêu thích!</p>
+    </div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-promo">
+      <input type="text" id="promoInput" placeholder="Nhập mã giảm giá..." />
+      <button class="cart-promo-btn" onclick="applyPromo()">Áp dụng</button>
+    </div>
+    <div class="promo-success" id="promoSuccess">✓ Mã <strong id="promoApplied"></strong> đã được áp dụng! Giảm 10%</div>
+    <div class="cart-summary">
+      <div class="cart-summary-row"><span>Tạm tính</span><span id="cartSubtotal">₫0</span></div>
+      <div class="cart-summary-row" id="discountRow" style="display:none;color:var(--green)"><span>Giảm giá</span><span id="cartDiscount"></span></div>
+      <div class="cart-summary-row"><span>Phí vận chuyển</span><span id="cartShipping">Miễn phí</span></div>
+      <div class="cart-summary-row total"><span>Tổng cộng</span><span id="cartTotal">₫0</span></div>
+    </div>
+    <button class="cart-checkout-btn" id="cartCheckoutBtn" onclick="openCheckout()" disabled>Tiến hành thanh toán →</button>
+    <div class="cart-secure">🔒 Thanh toán bảo mật · SSL 256-bit</div>
+  </div>
+</div>
+
+<!-- ══ CHECKOUT MODAL ══ -->
+<div class="checkout-overlay" id="checkoutOverlay">
+  <div class="checkout-modal-inner">
+    <!-- Progress -->
+    <div class="checkout-steps">
+      <div class="step-item">
+        <div class="step-dot active" id="sdot1">1</div>
+        <div class="step-label active" id="slabel1">Thông tin</div>
+      </div>
+      <div class="step-line" id="sline1"></div>
+      <div class="step-item">
+        <div class="step-dot" id="sdot2">2</div>
+        <div class="step-label" id="slabel2">Thanh toán</div>
+      </div>
+      <div class="step-line" id="sline2"></div>
+      <div class="step-item">
+        <div class="step-dot" id="sdot3">3</div>
+        <div class="step-label" id="slabel3">Xác nhận</div>
+      </div>
+    </div>
+
+    <!-- STEP 1: Shipping info -->
+    <div class="checkout-step active" id="step1">
+      <div class="checkout-h">Thông tin giao hàng</div>
+      <div class="checkout-sub">Vui lòng điền đầy đủ thông tin để chúng tôi giao hàng đến bạn.</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Họ *</label>
+          <input type="text" id="fLastName" placeholder="Nguyễn"/>
+          <div class="form-error" id="eLastName">Vui lòng nhập họ</div>
+        </div>
+        <div class="form-group">
+          <label>Tên *</label>
+          <input type="text" id="fFirstName" placeholder="Văn An"/>
+          <div class="form-error" id="eFirstName">Vui lòng nhập tên</div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email *</label>
+          <input type="email" id="fEmail" placeholder="email@example.com"/>
+          <div class="form-error" id="eEmail">Email không hợp lệ</div>
+        </div>
+        <div class="form-group">
+          <label>Số điện thoại *</label>
+          <input type="tel" id="fPhone" placeholder="0901 234 567"/>
+          <div class="form-error" id="ePhone">Vui lòng nhập số điện thoại</div>
+        </div>
+      </div>
+      <div class="form-row single">
+        <div class="form-group">
+          <label>Địa chỉ *</label>
+          <input type="text" id="fAddress" placeholder="Số nhà, tên đường..."/>
+          <div class="form-error" id="eAddress">Vui lòng nhập địa chỉ</div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Tỉnh / Thành phố *</label>
+          <select id="fCity">
+            <option value="">Chọn tỉnh/thành phố</option>
+            <option>Hà Nội</option><option>TP. Hồ Chí Minh</option><option>Đà Nẵng</option>
+            <option>Hải Phòng</option><option>Cần Thơ</option><option>Yên Bái</option>
+            <option>Lào Cai</option><option>Nghệ An</option><option>Bình Dương</option>
+            <option>Đồng Nai</option><option>Khác</option>
+          </select>
+          <div class="form-error" id="eCity">Vui lòng chọn tỉnh/thành phố</div>
+        </div>
+        <div class="form-group">
+          <label>Quận / Huyện</label>
+          <input type="text" id="fDistrict" placeholder="Quận / Huyện..."/>
+        </div>
+      </div>
+      <div class="checkout-btn-row">
+        <button class="co-back" onclick="closeCheckout()">← Quay lại</button>
+        <button class="co-next" onclick="goStep2()">Tiếp theo → Thanh toán</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: Payment -->
+    <div class="checkout-step" id="step2">
+      <div class="checkout-h">Phương thức thanh toán</div>
+      <div class="checkout-sub">Chọn phương thức thanh toán phù hợp với bạn.</div>
+      <div class="payment-methods">
+        <div class="pay-opt selected" id="pay-card" onclick="selectPay('card')">
+          <div class="pay-icon">💳</div>
+          <div class="pay-name">Thẻ tín dụng</div>
+        </div>
+        <div class="pay-opt" id="pay-momo" onclick="selectPay('momo')">
+          <div class="pay-icon">📱</div>
+          <div class="pay-name">MoMo</div>
+        </div>
+        <div class="pay-opt" id="pay-vnpay" onclick="selectPay('vnpay')">
+          <div class="pay-icon">🏦</div>
+          <div class="pay-name">VNPay QR</div>
+        </div>
+        <div class="pay-opt" id="pay-cod" onclick="selectPay('cod')">
+          <div class="pay-icon">💵</div>
+          <div class="pay-name">Tiền mặt</div>
+        </div>
+      </div>
+      <div class="card-fields" id="cardFields">
+        <div class="form-row single">
+          <div class="form-group">
+            <label>Số thẻ *</label>
+            <div class="card-num-wrap">
+              <input type="text" id="fCardNum" placeholder="1234 5678 9012 3456" maxlength="19" oninput="formatCard(this)"/>
+              <span class="card-type" id="cardTypeIcon">💳</span>
+            </div>
+            <div class="form-error" id="eCardNum">Số thẻ không hợp lệ</div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Tên chủ thẻ *</label>
+            <input type="text" id="fCardName" placeholder="NGUYEN VAN AN" style="text-transform:uppercase"/>
+            <div class="form-error" id="eCardName">Vui lòng nhập tên chủ thẻ</div>
+          </div>
+          <div class="form-group">
+            <label>Ngày hết hạn *</label>
+            <input type="text" id="fCardExp" placeholder="MM/YY" maxlength="5" oninput="formatExp(this)"/>
+            <div class="form-error" id="eCardExp">Ngày hết hạn không hợp lệ</div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>CVV *</label>
+            <input type="password" id="fCardCvv" placeholder="•••" maxlength="4"/>
+            <div class="form-error" id="eCardCvv">CVV không hợp lệ</div>
+          </div>
+          <div class="form-group" style="justify-content:flex-end;padding-top:22px">
+            <div style="font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px">🔒 Bảo mật 256-bit SSL</div>
+          </div>
+        </div>
+      </div>
+      <div id="altPayFields" style="display:none;padding:20px;background:rgba(255,255,255,0.03);border:0.5px solid var(--border);border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:10px" id="altPayIcon">📱</div>
+        <div style="font-family:var(--font-display);font-size:15px;font-weight:600;margin-bottom:6px" id="altPayName">MoMo</div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.6" id="altPayDesc">Quét mã QR hoặc nhập số điện thoại MoMo để thanh toán. Đơn hàng sẽ được xác nhận ngay sau khi thanh toán thành công.</div>
+      </div>
+      <div class="checkout-btn-row">
+        <button class="co-back" onclick="goStep(1)">← Quay lại</button>
+        <button class="co-next" onclick="goStep3()">Xem lại đơn hàng →</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Review & Confirm -->
+    <div class="checkout-step" id="step3">
+      <div class="checkout-h">Xác nhận đơn hàng</div>
+      <div class="checkout-sub">Kiểm tra lại thông tin trước khi hoàn tất đặt hàng.</div>
+
+      <!-- Shipping summary -->
+      <div style="background:rgba(255,255,255,0.03);border:0.5px solid var(--border);border-radius:16px;padding:16px 20px;margin-bottom:16px">
+        <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Địa chỉ giao hàng</div>
+        <div style="font-size:14px;color:var(--text);line-height:1.7" id="reviewAddress">—</div>
+      </div>
+      <!-- Payment summary -->
+      <div style="background:rgba(255,255,255,0.03);border:0.5px solid var(--border);border-radius:16px;padding:16px 20px;margin-bottom:20px">
+        <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Thanh toán</div>
+        <div style="font-size:14px;color:var(--text)" id="reviewPayment">—</div>
+      </div>
+
+      <!-- Items -->
+      <div class="checkout-order-items" id="checkoutOrderItems"></div>
+
+      <!-- Totals -->
+      <div class="co-summary" id="checkoutSummary"></div>
+
+      <div class="checkout-btn-row">
+        <button class="co-back" onclick="goStep(2)">← Quay lại</button>
+        <button class="co-next" id="placeOrderBtn" onclick="placeOrder()" style="background:linear-gradient(135deg,#4ade80,#22d3ee)">✓ Đặt hàng ngay</button>
+      </div>
+    </div>
+
+    <!-- STEP 4: Success -->
+    <div class="checkout-step" id="step4">
+      <div class="success-screen">
+        <div class="success-anim">✓</div>
+        <div class="success-title">Đặt hàng thành công!</div>
+        <p class="success-sub">Cảm ơn bạn đã tin tưởng Apple. Chúng tôi sẽ xử lý đơn hàng và giao đến bạn trong 2–4 ngày làm việc.</p>
+        <div class="order-code">
+          <div class="order-code-label">Mã đơn hàng</div>
+          <div class="order-code-val" id="orderCodeVal">AP-XXXXXX</div>
+        </div>
+        <div class="success-steps">
+          <div class="success-step">
+            <div class="success-step-icon">📦</div>
+            <div class="success-step-label">Đang đóng gói<br>1–2 ngày</div>
+          </div>
+          <div class="success-step">
+            <div class="success-step-icon">🚚</div>
+            <div class="success-step-label">Đang vận chuyển<br>1–2 ngày</div>
+          </div>
+          <div class="success-step">
+            <div class="success-step-icon">🏠</div>
+            <div class="success-step-label">Giao đến nhà<br>bạn</div>
+          </div>
+        </div>
+        <button class="success-close-btn" onclick="closeAll()">Tiếp tục mua sắm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <span class="toast-icon" id="toastIcon">✅</span>
+  <span id="toastMsg">Đã thêm vào giỏ hàng</span>
+</div>
+
+<script>
+  // ── Scroll reveal ──
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const d = parseFloat(entry.target.style.transitionDelay||'0') * 1000;
+        setTimeout(() => entry.target.classList.add('visible'), d);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => observer.observe(el));
+
+  // ── Color picker ──
+  function setColor(el) {
+    document.querySelectorAll('.color-opt').forEach(o => o.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  // ── Nav scroll ──
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').style.background =
+      window.scrollY > 60 ? 'rgba(7,7,15,0.92)' : 'rgba(7,7,15,0.65)';
+  });
+
+  // ════════════════════════════
+  //  CART STATE
+  // ════════════════════════════
+  let cart = [];
+  let promoApplied = false;
+
+  const fmtVND = n => '₫' + Number(n).toLocaleString('vi-VN');
+
+  function addToCart(id, name, price, variant, img) {
+    const existing = cart.find(i => i.id === id);
+    if (existing) {
+      existing.qty++;
+    } else {
+      cart.push({ id, name, price: parseInt(price), variant, img, qty: 1 });
     }
-  </script>
-</body>
+    updateCartUI();
+    openCart();
+    showToast('🛒', `Đã thêm <strong>${name}</strong> vào giỏ hàng`);
+    bumpBadge();
+  }
 
+  function removeFromCart(id) {
+    cart = cart.filter(i => i.id !== id);
+    updateCartUI();
+  }
+
+  function changeQty(id, delta) {
+    const item = cart.find(i => i.id === id);
+    if (!item) return;
+    item.qty += delta;
+    if (item.qty <= 0) removeFromCart(id);
+    else updateCartUI();
+  }
+
+  function updateCartUI() {
+    const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+    const count = cart.reduce((s, i) => s + i.qty, 0);
+    const discount = promoApplied ? Math.round(total * 0.1) : 0;
+    const finalTotal = total - discount;
+
+    // Badge
+    document.getElementById('cartBadge').textContent = count;
+    document.getElementById('cartCount').textContent = count + ' sản phẩm';
+
+    // Subtotal/total
+    document.getElementById('cartSubtotal').textContent = fmtVND(total);
+    document.getElementById('cartTotal').textContent = fmtVND(finalTotal);
+    if (promoApplied) {
+      document.getElementById('discountRow').style.display = 'flex';
+      document.getElementById('cartDiscount').textContent = '-' + fmtVND(discount);
+    }
+
+    // Shipping
+    document.getElementById('cartShipping').textContent = total > 5000000 ? '🎁 Miễn phí' : fmtVND(50000);
+
+    // Checkout button
+    document.getElementById('cartCheckoutBtn').disabled = cart.length === 0;
+
+    // Cart body
+    const body = document.getElementById('cartBody');
+    if (cart.length === 0) {
+      body.innerHTML = `<div class="cart-empty"><div class="cart-empty-icon">🛒</div><p>Giỏ hàng của bạn đang trống.<br>Hãy chọn sản phẩm yêu thích!</p></div>`;
+      return;
+    }
+    body.innerHTML = cart.map(item => `
+      <div class="cart-item" id="citem-${item.id}">
+        <img class="cart-item-img" src="${item.img}" alt="${item.name}"/>
+        <div class="cart-item-info">
+          <div class="cart-item-name">${item.name}</div>
+          <div class="cart-item-variant">${item.variant}</div>
+          <div class="cart-item-row">
+            <div class="cart-qty">
+              <button class="qty-btn" onclick="changeQty('${item.id}',-1)">−</button>
+              <span class="qty-num">${item.qty}</span>
+              <button class="qty-btn" onclick="changeQty('${item.id}',1)">+</button>
+            </div>
+            <span class="cart-item-price">${fmtVND(item.price * item.qty)}</span>
+          </div>
+        </div>
+        <button class="cart-remove" onclick="removeFromCart('${item.id}')" title="Xóa">✕</button>
+      </div>
+    `).join('');
+  }
+
+  function applyPromo() {
+    const code = document.getElementById('promoInput').value.trim().toUpperCase();
+    if (['APPLE10','SALE10','NEWYEAR'].includes(code)) {
+      promoApplied = true;
+      document.getElementById('promoSuccess').style.display = 'block';
+      document.getElementById('promoApplied').textContent = code;
+      updateCartUI();
+      showToast('🎉', 'Áp dụng mã giảm giá thành công!');
+    } else {
+      showToast('❌', 'Mã giảm giá không hợp lệ');
+    }
+  }
+
+  function openCart() {
+    document.getElementById('cartOverlay').classList.add('open');
+    document.getElementById('cartDrawer').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeCart() {
+    document.getElementById('cartOverlay').classList.remove('open');
+    document.getElementById('cartDrawer').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function bumpBadge() {
+    const b = document.getElementById('cartBadge');
+    b.classList.remove('bump');
+    void b.offsetWidth;
+    b.classList.add('bump');
+  }
+
+  // ════════════════════════════
+  //  CHECKOUT
+  // ════════════════════════════
+  let currentStep = 1;
+  let selectedPay = 'card';
+
+  function openCheckout() {
+    closeCart();
+    document.getElementById('checkoutOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    goStep(1);
+  }
+  function closeCheckout() {
+    document.getElementById('checkoutOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function closeAll() {
+    closeCheckout();
+    cart = [];
+    promoApplied = false;
+    updateCartUI();
+  }
+
+  function goStep(n) {
+    [1,2,3,4].forEach(i => {
+      document.getElementById('step'+i).classList.toggle('active', i === n);
+    });
+    [1,2,3].forEach(i => {
+      const dot = document.getElementById('sdot'+i);
+      const label = document.getElementById('slabel'+i);
+      dot.classList.toggle('active', i === n);
+      dot.classList.toggle('done', i < n);
+      label.classList.toggle('active', i === n);
+      if (i < n) dot.textContent = '✓';
+      else dot.textContent = i;
+    });
+    [1,2].forEach(i => {
+      document.getElementById('sline'+i).classList.toggle('done', i < n);
+    });
+    currentStep = n;
+  }
+
+  function validateStep1() {
+    let ok = true;
+    const fields = [
+      ['fLastName','eLastName', v => v.trim().length > 0],
+      ['fFirstName','eFirstName', v => v.trim().length > 0],
+      ['fEmail','eEmail', v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)],
+      ['fPhone','ePhone', v => v.replace(/\D/g,'').length >= 9],
+      ['fAddress','eAddress', v => v.trim().length > 3],
+      ['fCity','eCity', v => v !== ''],
+    ];
+    fields.forEach(([fid, eid, fn]) => {
+      const el = document.getElementById(fid);
+      const err = document.getElementById(eid);
+      const valid = fn(el.value);
+      el.classList.toggle('form-invalid', !valid);
+      err.classList.toggle('show', !valid);
+      if (!valid) ok = false;
+    });
+    return ok;
+  }
+
+  function goStep2() {
+    if (!validateStep1()) { showToast('⚠️','Vui lòng điền đầy đủ thông tin'); return; }
+    goStep(2);
+  }
+
+  function validateStep2() {
+    if (selectedPay !== 'card') return true;
+    let ok = true;
+    const cardFields = [
+      ['fCardNum','eCardNum', v => v.replace(/\s/g,'').length === 16],
+      ['fCardName','eCardName', v => v.trim().length > 2],
+      ['fCardExp','eCardExp', v => /^\d{2}\/\d{2}$/.test(v)],
+      ['fCardCvv','eCardCvv', v => v.length >= 3],
+    ];
+    cardFields.forEach(([fid, eid, fn]) => {
+      const el = document.getElementById(fid);
+      const err = document.getElementById(eid);
+      const valid = fn(el.value);
+      el.classList.toggle('form-invalid', !valid);
+      err.classList.toggle('show', !valid);
+      if (!valid) ok = false;
+    });
+    return ok;
+  }
+
+  function goStep3() {
+    if (!validateStep2()) { showToast('⚠️','Vui lòng kiểm tra thông tin thanh toán'); return; }
+    // Build review
+    const ln = document.getElementById('fLastName').value;
+    const fn = document.getElementById('fFirstName').value;
+    const em = document.getElementById('fEmail').value;
+    const ph = document.getElementById('fPhone').value;
+    const ad = document.getElementById('fAddress').value;
+    const ct = document.getElementById('fCity').value;
+    const ds = document.getElementById('fDistrict').value;
+    document.getElementById('reviewAddress').innerHTML =
+      `<strong>${ln} ${fn}</strong><br>${ph} · ${em}<br>${ad}${ds?', '+ds:''}, ${ct}`;
+
+    const payNames = {card:'💳 Thẻ tín dụng', momo:'📱 MoMo', vnpay:'🏦 VNPay QR', cod:'💵 Tiền mặt (COD)'};
+    document.getElementById('reviewPayment').textContent = payNames[selectedPay];
+
+    // Order items
+    document.getElementById('checkoutOrderItems').innerHTML = cart.map(item => `
+      <div class="co-item">
+        <img class="co-item-img" src="${item.img}" alt="${item.name}"/>
+        <div>
+          <div class="co-item-name">${item.name}</div>
+          <div class="co-item-qty">${item.variant} · SL: ${item.qty}</div>
+        </div>
+        <div class="co-item-price">${fmtVND(item.price * item.qty)}</div>
+      </div>
+    `).join('');
+
+    // Summary
+    const sub = cart.reduce((s,i) => s+i.price*i.qty, 0);
+    const disc = promoApplied ? Math.round(sub*0.1) : 0;
+    const ship = sub > 5000000 ? 0 : 50000;
+    const total = sub - disc + ship;
+    document.getElementById('checkoutSummary').innerHTML = `
+      <div class="co-row"><span>Tạm tính</span><span>${fmtVND(sub)}</span></div>
+      ${disc ? `<div class="co-row" style="color:var(--green)"><span>Giảm giá</span><span>-${fmtVND(disc)}</span></div>` : ''}
+      <div class="co-row"><span>Vận chuyển</span><span>${ship===0?'🎁 Miễn phí':fmtVND(ship)}</span></div>
+      <div class="co-row total"><span>Tổng cộng</span><span>${fmtVND(total)}</span></div>
+    `;
+    goStep(3);
+  }
+
+  function placeOrder() {
+    const btn = document.getElementById('placeOrderBtn');
+    btn.textContent = '⏳ Đang xử lý...';
+    btn.disabled = true;
+    setTimeout(() => {
+      const code = 'AP-' + Math.random().toString(36).substr(2,6).toUpperCase();
+      document.getElementById('orderCodeVal').textContent = code;
+      goStep(4);
+    }, 1800);
+  }
+
+  function selectPay(type) {
+    selectedPay = type;
+    ['card','momo','vnpay','cod'].forEach(t => {
+      document.getElementById('pay-'+t).classList.toggle('selected', t === type);
+    });
+    const altInfo = {
+      momo: {icon:'📱', name:'Ví MoMo', desc:'Quét mã QR hoặc nhập số điện thoại MoMo để thanh toán. Đơn hàng xác nhận ngay sau khi thanh toán thành công.'},
+      vnpay: {icon:'🏦', name:'VNPay QR', desc:'Mở app ngân hàng hỗ trợ VNPay và quét mã QR. Hỗ trợ hơn 40 ngân hàng tại Việt Nam.'},
+      cod: {icon:'💵', name:'Thanh toán khi nhận hàng (COD)', desc:'Bạn sẽ thanh toán bằng tiền mặt khi nhận hàng. Giao hàng trong 2–4 ngày làm việc.'},
+    };
+    if (type === 'card') {
+      document.getElementById('cardFields').style.display = 'block';
+      document.getElementById('altPayFields').style.display = 'none';
+    } else {
+      document.getElementById('cardFields').style.display = 'none';
+      const alt = document.getElementById('altPayFields');
+      alt.style.display = 'block';
+      document.getElementById('altPayIcon').textContent = altInfo[type].icon;
+      document.getElementById('altPayName').textContent = altInfo[type].name;
+      document.getElementById('altPayDesc').textContent = altInfo[type].desc;
+    }
+  }
+
+  // Card input formatters
+  function formatCard(el) {
+    let v = el.value.replace(/\D/g,'').substr(0,16);
+    el.value = v.replace(/(.{4})/g,'$1 ').trim();
+    const icons = {'4':'💳','5':'💳','3':'💳'};
+    document.getElementById('cardTypeIcon').textContent = icons[v[0]] || '💳';
+  }
+  function formatExp(el) {
+    let v = el.value.replace(/\D/g,'').substr(0,4);
+    if (v.length > 2) v = v.slice(0,2) + '/' + v.slice(2);
+    el.value = v;
+  }
+
+  // Toast
+  let toastTimer;
+  function showToast(icon, msg) {
+    const t = document.getElementById('toast');
+    document.getElementById('toastIcon').textContent = icon;
+    document.getElementById('toastMsg').innerHTML = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove('show'), 3000);
+  }
+</script>
+</body>
 </html>
